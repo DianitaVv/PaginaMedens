@@ -96,17 +96,26 @@ window.addEventListener('resize', () => {
 });
 
 // ===== Ocultar tarjetas al hacer scroll (solo desktop) =====
-if (!isMobile()) {
-    const cardsContainer = document.querySelector('.slide-cards-container');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            cardsContainer.classList.add('hide-on-scroll');
-        } else {
-            cardsContainer.classList.remove('hide-on-scroll');
-        }
-    });
-}
+// ===== Ocultar tarjetas al hacer scroll (solo desktop) =====
+document.addEventListener('DOMContentLoaded', function() {
+    if (!isMobile()) {
+        const heroSection = document.getElementById('inicio');
+        const cardsContainer = document.querySelector('.slide-cards-container');
+        
+        window.addEventListener('scroll', () => {
+            if (!isMobile()) {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                
+                // Si la sección hero sale de la vista, ocultar tarjetas
+                if (heroBottom < 0) {
+                    cardsContainer.classList.add('hide-on-scroll');
+                } else {
+                    cardsContainer.classList.remove('hide-on-scroll');
+                }
+            }
+        });
+    }
+});
 
 // ===== Toggle Dark Mode =====
 const themeToggleBtn = document.getElementById('theme-toggle');
