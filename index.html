@@ -5,136 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEDENS - Hemodiálisis en Tula</title>
     <link rel="icon" href="images/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración de Tailwind -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'medens-blue': '#014f8a',
-                        'card-orange': '#F4A261',
-                        'card-terracota': '#E76F51',
-                        'card-teal': '#2A9D8F',
-                        'card-dark': '#264653'
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
-                    },
-                    animation: {
-                        'fadeInUp-1': 'fadeInUp 1s ease-out 0.5s forwards',
-                        'fadeInUp-2': 'fadeInUp 1s ease-out 1s forwards',
-                        'fadeInUp-3': 'fadeInUp 1s ease-out 1.5s forwards',
-                        'fadeInUp-4': 'fadeInUp 1s ease-out 2s forwards'
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Estilos personalizados -->
-    <style>
-        .animate-delayed {
-            opacity: 0;
-        }
-        
-        .tab-button {
-            color: #6B7280;
-        }
-        
-        .tab-button.active {
-            background-color: #014f8a;
-            color: white;
-        }
-        
-        .dark .tab-button {
-            color: #9CA3AF;
-        }
-        
-        .dark .tab-button.active {
-            background-color: #014f8a;
-            color: white;
-        }
-        
-        .tab-button-simple {
-            color: #6B7280;
-        }
-        
-        .tab-button-simple.active-simple {
-            background-color: #f3f4f6;
-            color: #014f8a;
-            font-weight: 700;
-        }
-        
-        .dark .tab-button-simple {
-            color: #9CA3AF;
-        }
-        
-        .dark .tab-button-simple.active-simple {
-            background-color: #374151;
-            color: #014f8a;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="font-sans bg-white dark:bg-gray-900 transition-colors duration-300">
+<body>
     
     <!-- ==================== NAVEGACIÓN ==================== -->
-    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full top-0 z-50 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
                 <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <img src="images/logoMEDENS.jpeg" alt="MEDENS Logo" class="h-16 w-auto">
+                <div class="logo-container">
+                    <img src="images/logoMEDENS.jpeg" alt="MEDENS Logo" class="logo">
                 </div>
                 
                 <!-- Menú Desktop -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue dark:hover:text-medens-blue transition-colors">Inicio</a>
-                    <a href="#servicios" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue dark:hover:text-medens-blue transition-colors">Servicios</a>
-                    <a href="#nosotros" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue dark:hover:text-medens-blue transition-colors">Nosotros</a>
-                    <a href="#horarios" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue dark:hover:text-medens-blue transition-colors">Horarios</a>
-                    <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue dark:hover:text-medens-blue transition-colors">Contacto</a>
+                <div class="menu-desktop">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#horarios">Horarios</a>
+                    <a href="#contacto">Contacto</a>
                     
-                    <button class="bg-medens-blue text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all">
-                        Agendar Cita
-                    </button>
+                    <button class="btn-agendar">Agendar Cita</button>
                     
                     <!-- Toggle de tema -->
-                    <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue transition-colors">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <button id="theme-toggle" class="theme-toggle-btn">
+                        <svg id="theme-toggle-dark-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="theme-toggle-light-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
                     
                     <!-- WhatsApp -->
-                    <a href="#" class="text-green-500 hover:text-green-600 transition-colors">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="#" class="whatsapp-link">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
                     </a>
                 </div>
 
                 <!-- Menú Mobile (botones) -->
-                <div class="md:hidden flex items-center space-x-4">
-                    <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue transition-colors">
-                        <svg id="theme-toggle-dark-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                <div class="menu-mobile-buttons">
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <svg id="theme-toggle-dark-icon-mobile" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
-                        <svg id="theme-toggle-light-icon-mobile" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <svg id="theme-toggle-light-icon-mobile" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-medens-blue">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="mobile-menu-button" class="mobile-menu-btn">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
@@ -143,135 +67,65 @@
         </div>
 
         <!-- Menú Mobile (desplegable) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
-            <div class="px-4 pt-2 pb-4 space-y-2">
-                <a href="#inicio" class="block text-gray-700 dark:text-gray-300 hover:text-medens-blue py-2">Inicio</a>
-                <a href="#servicios" class="block text-gray-700 dark:text-gray-300 hover:text-medens-blue py-2">Servicios</a>
-                <a href="#nosotros" class="block text-gray-700 dark:text-gray-300 hover:text-medens-blue py-2">Nosotros</a>
-                <a href="#horarios" class="block text-gray-700 dark:text-gray-300 hover:text-medens-blue py-2">Horarios</a>
-                <a href="#contacto" class="block text-gray-700 dark:text-gray-300 hover:text-medens-blue py-2">Contacto</a>
-                <button class="w-full bg-medens-blue text-white px-6 py-2 rounded-full mt-2">
-                    Agendar Cita
-                </button>
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <div class="mobile-menu-content">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#horarios">Horarios</a>
+                <a href="#contacto">Contacto</a>
+                <button class="btn-agendar">Agendar Cita</button>
             </div>
         </div>
     </nav>
 
     <!-- ==================== HERO / BANNER PRINCIPAL ==================== -->
-    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-    <source src="https://www.pexels.com/es-es/download/video/7085114/" type="video/mp4">
-</video>
+    <section id="inicio" class="hero-section">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://www.pexels.com/es-es/download/video/7085114/" type="video/mp4">
+        </video>
         
-        <div class="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
+        <div class="hero-overlay"></div>
         
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-delayed animate-fadeInUp-1">
-                No estás solo en este camino
+        <!-- Contenido Principal -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Todos merecemos una vida plena
             </h1>
-            <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 sm:mb-10 leading-relaxed animate-delayed animate-fadeInUp-2 px-4">
-                Tu centro de hemodiálisis<br class="hidden sm:block">
-                Tratamiento integral, acompañamiento humano, precios accesibles
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-delayed animate-fadeInUp-3 px-4">
-                <button class="bg-medens-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-opacity-90 transition-all w-full sm:w-auto">
-                    Agenda tu consulta
-                </button>
-                <button class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-white hover:text-medens-blue transition-all w-full sm:w-auto">
-                    Conoce más
-                </button>
-            </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-delayed animate-fadeInUp-4">
-            <svg class="w-8 h-8 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- ==================== ¿QUÉ ES LA HEMODIÁLISIS? ==================== -->
-    <section id="servicios" class="py-16 sm:py-20 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Título -->
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-                    ¿Qué es la Hemodiálisis?
-                </h2>
-                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Entendiendo tu tratamiento de forma simple y clara
-                </p>
-            </div>
-
-            <!-- Contenido Principal -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-                <div class="relative">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="images/ImgDialisis.png" alt="Proceso de Hemodiálisis" class="w-full h-full object-cover">
+        <!-- Tarjetas Inferiores -->
+        <div class="cards-bottom-container">
+            <div class="slide-cards-container">
+                <!-- Wrapper Tarjeta 1 - Naranja -->
+                <div class="mobile-card-wrapper active">
+                    <div class="card-content bg-card-orange">
+                        <!-- Barra de progreso pegada al borde (solo mobile) -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-1"></div>
+                        </div>
+                        <h3>Modelo de atención propietario</h3>
                     </div>
                 </div>
-                <div>
-                    <div class="prose prose-lg dark:prose-invert max-w-none">
-                        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                            La hemodiálisis es un <span class="font-semibold text-medens-blue dark:text-blue-400">tratamiento que filtra tu sangre</span> cuando los riñones no pueden hacerlo de forma natural. 
-                        </p>
-                        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                            Durante el tratamiento, una máquina especial <span class="font-semibold text-medens-blue dark:text-blue-400">elimina los desechos y el exceso de líquido</span> de tu sangre, ayudando a mantener tu cuerpo en equilibrio.
-                        </p>
-                        <div class="bg-blue-50 dark:bg-gray-800 border-l-4 border-medens-blue rounded-r-lg p-4 mb-8">
-                            <p class="text-gray-700 dark:text-gray-300 font-medium">
-                                Es un proceso seguro, cómodo y que te permite llevar una vida normal y activa.
-                            </p>
+
+                <!-- Wrapper Tarjeta 2 - Azul Oscuro -->
+                <div class="mobile-card-wrapper">
+                    <div class="card-content bg-card-blue-dark">
+                        <h3>Innovación digital centrada en el paciente</h3>
+                        <!-- Barra de progreso pegada al borde (solo mobile) -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-2"></div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="space-y-4">
-                            <div class="flex items-start space-x-3">
-                                <span class="text-3xl">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                </span>
-                                <div>
-                                    <p class="text-gray-800 dark:text-white font-semibold text-lg">Duración: 3-4 horas por sesión</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Tiempo suficiente para una limpieza completa</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-3">
-                                <span class="text-3xl">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
-                                    </svg>
-                                </span>
-                                <div>
-                                    <p class="text-gray-800 dark:text-white font-semibold text-lg">Frecuencia: 3 veces por semana</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Lunes, miércoles y viernes típicamente</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-3">
-                                <span class="text-3xl">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-                                </span>
-                                <div>
-                                    <p class="text-gray-800 dark:text-white font-semibold text-lg">Comodidad: Proceso sin dolor</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Puedes leer, ver TV o descansar</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-3">
-                                <span class="text-3xl">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-                                    </svg>
-                                </span>
-                                <div>
-                                    <p class="text-gray-800 dark:text-white font-semibold text-lg">Vida activa: Sigue siendo tú</p>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Trabaja, viaja y disfruta tu vida</p>
-                                </div>
-                            </div>
+                <!-- Wrapper Tarjeta 3 - Turquesa -->
+                <div class="mobile-card-wrapper">
+                    <div class="card-content bg-card-teal">
+                        <h3>Verdadera cultura de cuidado - de por vida</h3>
+                        <!-- Barra de progreso pegada al borde (solo mobile) -->
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="progress-3"></div>
                         </div>
                     </div>
                 </div>
@@ -280,244 +134,217 @@
     </section>
 
     <!-- ==================== ¿CÓMO PODEMOS AYUDARTE? ==================== -->
-    <section class="py-12 sm:py-16 md:py-20 pb-20 sm:pb-24 md:pb-28 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800 dark:text-white mb-8 sm:mb-12 px-4">
-                ¿Cómo podemos ayudarte?
-            </h2>
+    <section class="section-help">
+        <div class="container">
+            <h2>¿Cómo podemos ayudarte?</h2>
 
             <!-- Tabs -->
-            <div class="flex justify-center mb-8 sm:mb-12 px-4">
-                <div class="inline-flex rounded-lg bg-white dark:bg-gray-800 shadow-md p-1 w-full sm:w-auto border border-gray-200 dark:border-gray-700">
-                    <button id="tab-paciente" class="tab-button-simple px-6 sm:px-8 py-3 rounded-lg font-semibold transition-all active-simple flex-1 sm:flex-none">
+            <div class="tabs-container">
+                <div class="tabs-wrapper">
+                    <button id="tab-paciente" class="tab-button-simple active-simple">
                         Soy Paciente ▼
                     </button>
-                    <button id="tab-cuidador" class="tab-button-simple px-6 sm:px-8 py-3 rounded-lg font-semibold transition-all flex-1 sm:flex-none">
+                    <button id="tab-cuidador" class="tab-button-simple">
                         Soy Cuidador ▼
                     </button>
                 </div>
             </div>
 
             <!-- Cards Paciente -->
-            <div id="cards-paciente" class="cards-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
+            <div id="cards-paciente" class="cards-container">
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Información Hemodiálisis</h3>
+                    <h3>Información Hemodiálisis</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Agendar Cita</h3>
+                    <h3>Agendar Cita</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Promociones</h3>
+                    <h3>Promociones</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Costos y Seguros</h3>
+                    <h3>Costos y Seguros</h3>
                 </div>
             </div>
 
             <!-- Cards Cuidador -->
-            <div id="cards-cuidador" class="cards-container hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
-                        </div>
+            <div id="cards-cuidador" class="cards-container hidden">
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Guía para Cuidadores</h3>
+                    <h3>Guía para Cuidadores</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Apoyo Psicológico</h3>
+                    <h3>Apoyo Psicológico</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Nutrición Familiar</h3>
+                    <h3>Nutrición Familiar</h3>
                 </div>
 
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 dark:border-gray-700">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-16 h-16 flex items-center justify-center">
-                            <svg class="w-14 h-14 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                        </div>
+                <div class="help-card">
+                    <div class="icon-container">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-800 dark:text-white mb-2">Recursos Descargables</h3>
+                    <h3>Recursos Descargables</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== HORARIOS / TURNOS ==================== -->
-    <section id="horarios" class="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <section id="horarios" class="section-horarios">
+        <div class="container">
+            <div class="horarios-grid">
                 
                 <!-- Columna Izquierda: Imagen -->
-               
-<div class="order-2 lg:order-1 w-full">
-    <div class="relative rounded-3xl overflow-hidden shadow-2xl max-w-full">
-        <img src="images/ImgPaciente.jpg" 
-             alt="Enfermera feliz" 
-             class="w-full h-64 sm:h-80 md:h-96 lg:h-full object-cover max-w-full">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <div class="absolute bottom-6 left-6 text-white">
-            <p class="text-lg font-semibold">Encuentra tu horario ideal</p>
-            <p class="text-sm opacity-90">Flexibilidad para tu estilo de vida</p>
-        </div>
-    </div>
-</div>
+                <div class="horarios-image-wrapper">
+                    <div class="horarios-image-container">
+                        <img src="images/ImgPaciente.jpg" 
+                             alt="Enfermera feliz" 
+                             class="horarios-image">
+                        <div class="image-overlay"></div>
+                        <div class="image-label">
+                            <p>Encuentra tu horario ideal</p>
+                            <p>Flexibilidad para tu estilo de vida</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Columna Derecha: Selección de Horarios -->
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-                        Nuestros Horarios
-                    </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        3 turnos diarios diseñados para adaptarse a tu rutina
-                    </p>
+                <div class="horarios-content">
+                    <h2>Nuestros Horarios</h2>
+                    <p>3 turnos diarios diseñados para adaptarse a tu rutina</p>
 
                     <!-- Cards de Turnos -->
-                    <div class="space-y-4 mb-8">
+                    <div class="turnos-container">
                         <!-- Turno Matutino -->
-                        <div id="turno-matutino" class="turno-card bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-transparent hover:border-blue-400 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center space-x-4">
-                                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-full p-3">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div id="turno-matutino" class="turno-card">
+                            <div class="turno-header">
+                                <div class="turno-info">
+                                    <div class="turno-icon blue">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                                         </svg>
                                     </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Turno Matutino</h3>
-                                        <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">6:00 AM - 10:00 AM</p>
+                                    <div class="turno-details">
+                                        <h3>Turno Matutino</h3>
+                                        <p class="blue">6:00 AM - 10:00 AM</p>
                                     </div>
                                 </div>
-                                <div class="hidden turno-check">
-                                    <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="turno-check">
+                                    <svg fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                             </div>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                            <p class="turno-description">
                                 Perfecto para madrugadores • Tarde libre para otras actividades
                             </p>
                         </div>
 
                         <!-- Turno Medio Día -->
-                        <div id="turno-medio" class="turno-card bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-transparent hover:border-orange-400 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center space-x-4">
-                                    <div class="bg-gradient-to-br from-orange-400 to-orange-600 rounded-full p-3">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div id="turno-medio" class="turno-card">
+                            <div class="turno-header">
+                                <div class="turno-info">
+                                    <div class="turno-icon orange">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                                         </svg>
                                     </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Turno Medio Día</h3>
-                                        <p class="text-2xl font-bold text-orange-600 dark:text-orange-400">10:00 AM - 2:00 PM</p>
+                                    <div class="turno-details">
+                                        <h3>Turno Medio Día</h3>
+                                        <p class="orange">10:00 AM - 2:00 PM</p>
                                     </div>
                                 </div>
-                                <div class="hidden turno-check">
-                                    <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="turno-check">
+                                    <svg fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                             </div>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                            <p class="turno-description">
                                 Horario flexible • Ideal para estudiantes y trabajadores
                             </p>
                         </div>
 
                         <!-- Turno Tarde -->
-                        <div id="turno-tarde" class="turno-card bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-transparent hover:border-teal-400 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center space-x-4">
-                                    <div class="bg-gradient-to-br from-teal-400 to-teal-600 rounded-full p-3">
-                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div id="turno-tarde" class="turno-card">
+                            <div class="turno-header">
+                                <div class="turno-info">
+                                    <div class="turno-icon teal">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
                                         </svg>
                                     </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Turno Tarde</h3>
-                                        <p class="text-2xl font-bold text-teal-600 dark:text-teal-400">2:00 PM - 6:00 PM</p>
+                                    <div class="turno-details">
+                                        <h3>Turno Tarde</h3>
+                                        <p class="teal">2:00 PM - 6:00 PM</p>
                                     </div>
                                 </div>
-                                <div class="hidden turno-check">
-                                    <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <div class="turno-check">
+                                    <svg fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
                                 </div>
                             </div>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                            <p class="turno-description">
                                 Mañanas libres • Perfecto para trabajos matutinos
                             </p>
                         </div>
                     </div>
 
                     <!-- Panel de Información del Turno Seleccionado -->
-                    <div id="turno-info" class="hidden bg-gradient-to-br from-medens-blue to-blue-600 rounded-2xl p-6 text-white">
-                        <div class="flex items-center justify-between mb-4">
-                            <h4 class="text-xl font-bold">Turno Seleccionado</h4>
-                            <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">
-                                Disponible
-                            </span>
+                    <div id="turno-info" class="turno-info-panel hidden">
+                        <div class="turno-info-header">
+                            <h4>Turno Seleccionado</h4>
+                            <span class="badge-disponible">Disponible</span>
                         </div>
-                        <p id="turno-detalles" class="text-white/90 mb-6"></p>
-                        <button class="w-full bg-white text-medens-blue px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all shadow-lg">
-                            Consultar Disponibilidad
-                        </button>
+                        <p id="turno-detalles"></p>
+                        <button>Consultar Disponibilidad</button>
                     </div>
 
                     <!-- Información adicional -->
-                    <div class="mt-6 flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="info-adicional">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                         <p>¿Dudas? Contáctanos por WhatsApp o teléfono</p>
@@ -528,74 +355,68 @@
     </section>
 
     <!-- ==================== UBICACIÓN / CONTACTO ==================== -->
-    <section id="contacto" class="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <!-- Degradado de fondo -->
-        <div class="absolute inset-0 bg-gradient-to-br from-[#014f8a] to-[#0a7fc6]"></div>
+    <section id="contacto" class="section-contacto">
+        <div class="contacto-bg"></div>
         
-        <!-- Contenido -->
-        <div class="relative max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="container">
+            <div class="contacto-grid">
                 
                 <!-- Columna Izquierda: Información -->
-                <div class="text-white space-y-6">
-                    <h2 class="text-4xl md:text-5xl font-bold leading-tight">
-                        Estamos cerca de ti
-                    </h2>
+                <div class="contacto-info">
+                    <h2>Estamos cerca de ti</h2>
                     
-                    <p class="text-lg md:text-xl text-blue-100 leading-relaxed">
-                        Tu clínica de hemodiálisis con calidad y calidez humana.
-                    </p>
+                    <p>Tu clínica de hemodiálisis con calidad y calidez humana.</p>
                     
                     <!-- Información de contacto -->
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-cyan-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="contacto-detalles">
+                        <div class="contacto-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            <div>
-                                <p class="font-semibold">Dirección</p>
-                                <p class="text-blue-100">Grupo Hospitalario Medens<br>Tula de Allende, Hidalgo</p>
+                            <div class="contacto-item-content">
+                                <p>Dirección</p>
+                                <p>Grupo Hospitalario Medens<br>Tula de Allende, Hidalgo</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-cyan-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="contacto-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
-                            <div>
-                                <p class="font-semibold">Horario</p>
-                                <p class="text-blue-100">24 Horas</p>
+                            <div class="contacto-item-content">
+                                <p>Horario</p>
+                                <p>24 Horas</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-cyan-300 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="contacto-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                             </svg>
-                            <div>
-                                <p class="font-semibold">Teléfono</p>
-                                <a href="tel:+527731234567" class="text-blue-100 hover:text-white transition">(773) 123-4567</a>
+                            <div class="contacto-item-content">
+                                <p>Teléfono</p>
+                                <a href="tel:+527731234567">(773) 123-4567</a>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Características -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 border-t border-blue-400">
-                        <div class="flex items-center space-x-2 text-sm">
-                            <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="contacto-features">
+                        <div class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <span>Estacionamiento</span>
                         </div>
-                        <div class="flex items-center space-x-2 text-sm">
-                            <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <span>Accesible</span>
                         </div>
-                        <div class="flex items-center space-x-2 text-sm">
-                            <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="feature-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
                             <span>Zona segura</span>
@@ -604,31 +425,26 @@
                 </div>
                 
                 <!-- Columna Derecha: Mapa -->
-                <div class="relative">
+                <div class="contacto-mapa-wrapper">
                     <!-- Imagen pequeña del hospital -->
-                    <div class="mb-6 rounded-xl overflow-hidden shadow-lg border-2 border-white/20">
+                    <div class="hospital-image">
                         <img 
                             src="images/GrupoHospitalarioMedens.jpg" 
-                            alt="Grupo Hospitalario Medens" 
-                            class="w-full object-cover"
+                            alt="Grupo Hospitalario Medens"
                         />
                     </div>
                     
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                    <div class="mapa-container">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.2236674913443!2d-99.3412815!3d20.041072099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d22d11c751cd9b%3A0x9d3d901e5e5d04b1!2sGRUPO%20HOSPITALARIO%20MEDENS!5e0!3m2!1ses-419!2smx!4v1767901143164!5m2!1ses-419!2smx" 
-                            width="50%" 
-                            height="450" 
-                            style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="w-full h-96 lg:h-[500px]">
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                     
                     <!-- Etiqueta flotante -->
-                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-[#014f8a] px-6 py-3 rounded-full shadow-xl font-semibold text-sm whitespace-nowrap">
+                    <div class="mapa-label">
                         📍 Tula de Allende, Hidalgo
                     </div>
                 </div>
@@ -637,130 +453,6 @@
     </section>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script>
-        // ===== Menú Mobile =====
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // ===== Tabs Paciente/Cuidador =====
-        const tabPaciente = document.getElementById('tab-paciente');
-        const tabCuidador = document.getElementById('tab-cuidador');
-        const cardsPaciente = document.getElementById('cards-paciente');
-        const cardsCuidador = document.getElementById('cards-cuidador');
-
-        tabPaciente.addEventListener('click', () => {
-            tabPaciente.classList.add('active-simple');
-            tabCuidador.classList.remove('active-simple');
-            cardsPaciente.classList.remove('hidden');
-            cardsCuidador.classList.add('hidden');
-        });
-
-        tabCuidador.addEventListener('click', () => {
-            tabCuidador.classList.add('active-simple');
-            tabPaciente.classList.remove('active-simple');
-            cardsCuidador.classList.remove('hidden');
-            cardsPaciente.classList.add('hidden');
-        });
-
-        // ===== Toggle Dark Mode =====
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
-        const themeToggleLightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
-
-        // Inicializar tema
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            themeToggleLightIcon.classList.remove('hidden');
-            themeToggleLightIconMobile.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-            themeToggleDarkIconMobile.classList.remove('hidden');
-        }
-
-        function toggleTheme() {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            themeToggleDarkIconMobile.classList.toggle('hidden');
-            themeToggleLightIconMobile.classList.toggle('hidden');
-
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-        }
-
-        themeToggleBtn.addEventListener('click', toggleTheme);
-        themeToggleBtnMobile.addEventListener('click', toggleTheme);
-
-        // ===== Selección de Turnos =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const turnoCards = document.querySelectorAll('.turno-card');
-            const turnoInfo = document.getElementById('turno-info');
-            const turnoDetalles = document.getElementById('turno-detalles');
-            
-            const turnos = {
-                'turno-matutino': {
-                    horario: '6:00 AM - 10:00 AM',
-                    detalles: 'El turno matutino es ideal para personas que prefieren comenzar temprano. Tendrás toda la tarde libre para realizar otras actividades.',
-                    color: 'blue'
-                },
-                'turno-medio': {
-                    horario: '10:00 AM - 2:00 PM',
-                    detalles: 'Horario intermedio perfecto para quienes buscan flexibilidad. Compatible con la mayoría de rutinas laborales y escolares.',
-                    color: 'orange'
-                },
-                'turno-tarde': {
-                    horario: '2:00 PM - 6:00 PM',
-                    detalles: 'Turno vespertino ideal si prefieres aprovechar las mañanas. Perfecto para quienes trabajan en horario matutino.',
-                    color: 'teal'
-                }
-            };
-            
-            turnoCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // Remover selección previa
-                    turnoCards.forEach(c => {
-                        c.classList.remove('border-blue-400', 'border-orange-400', 'border-teal-400', 'ring-4', 'ring-opacity-50');
-                        c.querySelector('.turno-check').classList.add('hidden');
-                    });
-                    
-                    // Agregar selección a la card actual
-                    const turnoId = this.id;
-                    const turno = turnos[turnoId];
-                    
-                    if (turno.color === 'blue') {
-                        this.classList.add('border-blue-400', 'ring-4', 'ring-blue-200', 'dark:ring-blue-900');
-                    } else if (turno.color === 'orange') {
-                        this.classList.add('border-orange-400', 'ring-4', 'ring-orange-200', 'dark:ring-orange-900');
-                    } else if (turno.color === 'teal') {
-                        this.classList.add('border-teal-400', 'ring-4', 'ring-teal-200', 'dark:ring-teal-900');
-                    }
-                    
-                    this.querySelector('.turno-check').classList.remove('hidden');
-                    
-                    // Mostrar información
-                    turnoDetalles.textContent = turno.detalles;
-                    turnoInfo.classList.remove('hidden');
-                    
-                    // Animación suave
-                    turnoInfo.style.opacity = '0';
-                    setTimeout(() => {
-                        turnoInfo.style.transition = 'opacity 0.5s';
-                        turnoInfo.style.opacity = '1';
-                    }, 10);
-                });
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
