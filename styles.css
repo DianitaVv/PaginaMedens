@@ -474,6 +474,194 @@ body.dark .hero-overlay {
         font-size: 4.5rem;
     }
 }
+/* =====================================================
+   SECCIÓN: ¿QUÉ ES LA HEMODIÁLISIS?
+   ===================================================== */
+.section-hemodialisis {
+    padding: 4rem 0 6rem;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+body.dark .section-hemodialisis {
+    background-color: var(--gray-900);
+}
+
+.section-hemodialisis .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-hemodialisis .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-hemodialisis h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+}
+
+body.dark .section-hemodialisis h2 {
+    color: white;
+}
+
+.section-hemodialisis .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+body.dark .section-hemodialisis .section-subtitle {
+    color: var(--gray-300);
+}
+
+.hemodialisis-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.hemodialisis-image-wrapper {
+    position: relative;
+}
+
+.hemodialisis-image-container {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hemodialisis-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hemodialisis-text p {
+    color: var(--gray-700);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+body.dark .hemodialisis-text p {
+    color: var(--gray-300);
+}
+
+.hemodialisis-text .highlight {
+    font-weight: 600;
+    color: var(--medens-blue);
+}
+
+body.dark .hemodialisis-text .highlight {
+    color: #60a5fa;
+}
+
+.hemodialisis-callout {
+    background-color: #eff6ff;
+    border-left: 4px solid var(--medens-blue);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+body.dark .hemodialisis-callout {
+    background-color: var(--gray-800);
+}
+
+.hemodialisis-callout p {
+    color: var(--gray-700);
+    font-weight: 500;
+    margin: 0;
+}
+
+body.dark .hemodialisis-callout p {
+    color: var(--gray-300);
+}
+
+.hemodialisis-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-item-detailed {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.feature-item-detailed svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--medens-blue);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+body.dark .feature-item-detailed svg {
+    color: #60a5fa;
+}
+
+.feature-item-detailed .feature-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+}
+
+body.dark .feature-item-detailed .feature-content h3 {
+    color: white;
+}
+
+.feature-item-detailed .feature-content p {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+body.dark .feature-item-detailed .feature-content p {
+    color: var(--gray-400);
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .section-hemodialisis h2 {
+        font-size: 2.25rem;
+    }
+    
+    .section-hemodialisis .section-header {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-hemodialisis {
+        padding: 5rem 0 6rem;
+    }
+    
+    .section-hemodialisis h2 {
+        font-size: 3rem;
+    }
+    
+    .section-hemodialisis .section-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hemodialisis-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
 
 /* =====================================================
    SECCIÓN: ¿CÓMO PODEMOS AYUDARTE?
