@@ -352,7 +352,8 @@ const translations = {
         contacto_telefono_label: "Phone",
         contacto_feature1: "Parking",
         contacto_feature2: "Accessible",
-        contacto_feature3: "Safe area"
+        contacto_feature3: "Safe area",
+    
     }
 };
 

@@ -28,10 +28,10 @@ body.dark {
    VARIABLES DE COLORES
    ===================================================== */
 :root {
-    --medens-blue: #014f8a;
-    --card-orange: #FF6B35;
-    --card-blue-dark: #024e8a;
-    --card-teal: #10d8b1;
+    --medens-blue: #1e5781;
+    --card-orange: #1e5781;
+    --card-blue-dark: #236696;
+    --card-teal: #2874ac;
     --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
@@ -637,6 +637,8 @@ body.dark .hero-overlay {
 /* =====================================================
    SECCIÓN: ¿QUÉ ES LA HEMODIÁLISIS?
    ===================================================== */
+
+   
 .section-hemodialisis {
     padding: 4rem 0 6rem;
     background-color: white;
@@ -688,20 +690,28 @@ body.dark .section-hemodialisis .section-subtitle {
     margin-bottom: 4rem;
 }
 
+
 .hemodialisis-image-wrapper {
     position: relative;
 }
 
 .hemodialisis-image-container {
-    border-radius: 1.5rem;
+    border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 60px rgba(2, 132, 199, 0.4),
+                0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .hemodialisis-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+body.dark .hemodialisis-image-container {
+    box-shadow: 0 0 80px rgba(14, 165, 233, 0.6),
+                0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .hemodialisis-text p {
@@ -830,6 +840,36 @@ body.dark .feature-item-detailed .feature-content p {
     padding: 3rem 0 5rem;
     background-color: var(--gray-100);
     transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-help::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/gradient.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+body.dark .section-help {
+    background-color: var(--gray-900);
+}
+
+body.dark .section-help::before {
+    opacity: 0.15;
+}
+
+.section-help .container {
+    position: relative;
+    z-index: 1;
 }
 
 body.dark .section-help {
@@ -911,42 +951,135 @@ body.dark .tab-button-simple.active-simple {
 }
 
 .help-card {
-    background-color: white;
-    border-radius: 1rem;
+    background-color: #edf3f8;
+    border-radius: 1.5rem;
     padding: 2rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
     cursor: pointer;
-    border: 1px solid var(--gray-100);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 180px;
 }
 
 body.dark .help-card {
-    background-color: var(--gray-800);
-    border-color: var(--gray-700);
+    background-color: #1e293b;
+    border-color: transparent;
 }
 
 .help-card:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
     transform: translateY(-4px);
+    border-color: var(--medens-blue);
 }
 
-.help-card .icon-container {
+.card-image-container {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    overflow: hidden;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    background-color: #edf3f8;
 }
 
-.help-card .icon-container svg {
-    width: 3.5rem;
-    height: 3.5rem;
-    color: #3b82f6;
+body.dark .card-image-container {
+    background-color: #0f172a;
 }
+
+.card-image-container img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.help-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+body.dark .help-card h3 {
+    color: #f1f5f9;
+}
+
+.card-arrow {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #54b6c7, #54b6c7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.help-card:hover .card-arrow {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.card-arrow svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+/* Responsive - en mobile volver a vertical */
+@media (max-width: 640px) {
+    .help-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .card-image-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+@media (max-width: 640px) {
+    .card-content-wrapper {
+        align-items: center;
+    }
+}
+}
+
+.card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+@media (max-width: 640px) {
+    .card-content-wrapper {
+        align-items: center;
+    }
+}
+
 
 .help-card h3 {
     font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
-    color: var(--gray-800);
+    color: #344a5a;
     margin-bottom: 0.5rem;
 }
 
@@ -1524,5 +1657,82 @@ body.dark .info-adicional {
     
     .mapa-container iframe {
         height: 31.25rem;
+    }
+}
+
+.hospital-image-card {
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.hospital-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hospital-overlay-card {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hospital-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.badge-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--medens-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+.hospital-badge span {
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .hospital-overlay-card {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .badge-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    .badge-icon svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    
+    .hospital-badge span {
+        font-size: 0.875rem;
     }
 }
