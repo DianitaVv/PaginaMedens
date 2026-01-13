@@ -263,6 +263,166 @@ body.dark .mobile-menu-content a {
     }
 }
 
+
+/* =====================================================
+   SELECTOR DE IDIOMA
+   ===================================================== */
+.language-selector {
+    position: relative;
+}
+
+.language-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #374151;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.3s;
+}
+
+body.dark .language-toggle-btn {
+    color: #d1d5db;
+}
+
+.language-toggle-btn:hover {
+    color: var(--medens-blue);
+}
+
+.language-toggle-btn span {
+    font-size: 1.25rem;
+}
+
+.language-toggle-btn .arrow-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-width: 150px;
+    z-index: 100;
+}
+
+body.dark .language-dropdown {
+    background-color: #374151;
+}
+
+.language-option,
+.language-option-mobile {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+body.dark .language-option,
+body.dark .language-option-mobile {
+    color: #d1d5db;
+}
+
+.language-option:hover,
+.language-option-mobile:hover {
+    background-color: #f3f4f6;
+}
+
+body.dark .language-option:hover,
+body.dark .language-option-mobile:hover {
+    background-color: #4b5563;
+}
+
+.language-option.active,
+.language-option-mobile.active {
+    background-color: #eff6ff;
+    color: var(--medens-blue);
+    font-weight: 600;
+}
+
+body.dark .language-option.active,
+body.dark .language-option-mobile.active {
+    background-color: #1e3a8a;
+    color: #60a5fa;
+}
+
+/* =====================================================
+   BOTONES FLOTANTES (WhatsApp y Facebook)
+   ===================================================== */
+.floating-buttons {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.float-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.float-btn svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.float-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+}
+
+.float-btn.facebook {
+    background: linear-gradient(135deg, #1877F2, #0C63D4);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-buttons {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .float-btn {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .float-btn svg {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
 /* =====================================================
    HERO / BANNER PRINCIPAL
    ===================================================== */
