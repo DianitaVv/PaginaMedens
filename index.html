@@ -5,116 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEDENS - Hemodiálisis en Tula</title>
     <link rel="icon" href="images/logo.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     
     <!-- ==================== NAVEGACIÓN ==================== -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-content">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <img src="images/logoMEDENS.png" alt="MEDENS Logo" class="logo">
-                </div>
-                
-                <!-- Menú Desktop -->
-                <div class="menu-desktop">
-                    <a href="#inicio" data-translate="nav_inicio">Inicio</a>
-                    <a href="#servicios" data-translate="nav_servicios">Servicios</a>
-                    <a href="#nosotros" data-translate="nav_nosotros">Nosotros</a>
-                    <a href="#horarios" data-translate="nav_horarios">Horarios</a>
-                    <a href="#contacto" data-translate="nav_contacto">Contacto</a>
-                    
-                    <button class="btn-agendar" data-translate="btn_agendar">Agendar Cita</button>
-                    
-                    <!-- Toggle de tema -->
-                    <button id="theme-toggle" class="theme-toggle-btn">
-                        <svg id="theme-toggle-dark-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg id="theme-toggle-light-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-
-                    <!-- Selector de Idioma -->
-                    <div class="language-selector">
-                        <button id="language-toggle" class="language-toggle-btn">
-                            <span id="current-flag">🌐</span>
-                            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div id="language-dropdown" class="language-dropdown hidden">
-                            <button data-lang="es" class="language-option active">
-                                <span>🇲🇽</span> Español
-                            </button>
-                            <button data-lang="en" class="language-option">
-                                <span>🇺🇸</span> English
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- WhatsApp -->
-                    <a href="#" class="whatsapp-link">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Menú Mobile (botones) -->
-                <div class="menu-mobile-buttons">
-                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
-                        <svg id="theme-toggle-dark-icon-mobile" class="hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg id="theme-toggle-light-icon-mobile" class="hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-
-                    <!-- Selector de Idioma Mobile -->
-                    <div class="language-selector">
-                        <button id="language-toggle-mobile" class="language-toggle-btn">
-                            <span id="current-flag-mobile">🌐</span>
-                            <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                        <div id="language-dropdown-mobile" class="language-dropdown hidden">
-                            <button data-lang="es" class="language-option-mobile active">
-                                <span>🇲🇽</span> Español
-                            </button>
-                            <button data-lang="en" class="language-option-mobile">
-                                <span>🇺🇸</span> English
-                            </button>
-                        </div>
-                    </div>
-
-                    <button id="mobile-menu-button" class="mobile-menu-btn">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Menú Mobile (desplegable) -->
-        <div id="mobile-menu" class="mobile-menu hidden">
-            <div class="mobile-menu-content">
-                <a href="#inicio" data-translate="nav_inicio">Inicio</a>
-                <a href="#servicios" data-translate="nav_servicios">Servicios</a>
-                <a href="#nosotros" data-translate="nav_nosotros">Nosotros</a>
-                <a href="#horarios" data-translate="nav_horarios">Horarios</a>
-                <a href="#contacto" data-translate="nav_contacto">Contacto</a>
-                <button class="btn-agendar" data-translate="btn_agendar">Agendar Cita</button>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <!-- ==================== HERO / BANNER PRINCIPAL ==================== -->
     <section id="inicio" class="hero-section">
@@ -171,240 +68,304 @@
     </section>
 
     
-    <!-- ==================== ¿QUÉ ES LA HEMODIÁLISIS? ==================== -->
-    <section id="servicios" class="section-hemodialisis">
-        <div class="container">
-            <!-- Título -->
-            <div class="section-header">
-                <h2 data-translate="hemo_title">¿Qué es la Hemodiálisis?</h2>
-                <p class="section-subtitle" data-translate="hemo_subtitle">
-                    Entendiendo tu tratamiento de forma simple y clara
-                </p>
-            </div>
-
-            <!-- Contenido Principal -->
-            <div class="hemodialisis-content">
-                <div class="hemodialisis-image-wrapper">
-                    <div class="hemodialisis-image-container">
-                        <img src="images/ImgHemodialisis.png" alt="Proceso de Hemodiálisis" class="hemodialisis-image">
-                    </div>
-                </div>
-                
-                <div class="hemodialisis-text">
-                    <p data-translate="hemo_text1">
-                        La hemodiálisis es un <span class="highlight">tratamiento que filtra tu sangre</span> cuando los riñones no pueden hacerlo de forma natural. 
-                    </p>
-                    <p data-translate="hemo_text2">
-                        Durante el tratamiento, una máquina especial <span class="highlight">elimina los desechos y el exceso de líquido</span> de tu sangre, ayudando a mantener tu cuerpo en equilibrio.
-                    </p>
-                    
-                    <div class="hemodialisis-callout">
-                        <p data-translate="hemo_callout">
-                            Es un proceso seguro, cómodo y que te permite llevar una vida normal y activa.
-                        </p>
-                    </div>
-
-                    <div class="hemodialisis-features">
-                        <div class="feature-item-detailed">
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <div class="feature-content">
-                                <h3 data-translate="hemo_duracion">Duración: 3-4 horas por sesión</h3>
-                                <p data-translate="hemo_duracion_desc">Tiempo suficiente para una limpieza completa</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item-detailed">
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
-                            </svg>
-                            <div class="feature-content">
-                                <h3 data-translate="hemo_frecuencia">Frecuencia: 3 veces por semana</h3>
-                                <p data-translate="hemo_frecuencia_desc">Lunes, miércoles y viernes típicamente</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item-detailed">
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <div class="feature-content">
-                                <h3 data-translate="hemo_comodidad">Comodidad: Proceso sin dolor</h3>
-                                <p data-translate="hemo_comodidad_desc">Puedes leer, ver TV o descansar</p>
-                            </div>
-                        </div>
-
-                        <div class="feature-item-detailed">
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
-                            </svg>
-                            <div class="feature-content">
-                                <h3 data-translate="hemo_vida">Vida activa: Sigue siendo tú</h3>
-                                <p data-translate="hemo_vida_desc">Trabaja, viaja y disfruta tu vida</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ==================== ¿CÓMO PODEMOS AYUDARTE? ==================== -->
-    <section class="section-help">
-        <div class="container">
-            <h2 data-translate="help_title">¿Cómo podemos ayudarte?</h2>
+<section class="section-help">
+    <div class="container">
+        <h2 data-translate="help_title">¿Cómo podemos ayudarte?</h2>
 
-            <!-- Tabs -->
-            <div class="tabs-container">
-                <div class="tabs-wrapper">
-                    <button id="tab-paciente" class="tab-button-simple active-simple" data-translate="tab_paciente">
-                        Soy Paciente ▼
-                    </button>
-                    <button id="tab-cuidador" class="tab-button-simple" data-translate="tab_cuidador">
-                        Soy Cuidador ▼
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs-wrapper">
+                <button id="tab-paciente" class="tab-button-simple active-simple" data-translate="tab_paciente">
+                    Soy Paciente ▼
+                </button>
+                <button id="tab-cuidador" class="tab-button-simple" data-translate="tab_cuidador">
+                    Soy Cuidador ▼
+                </button>
+            </div>
+        </div>
+
+        <!-- Cards Paciente -->
+        <div id="cards-paciente" class="cards-container">
+            <!-- Información Hemodiálisis -->
+            <div class="help-card" onclick="window.location.href='pages/hemodialisis-info.html'">
+                <div class="card-icon-container blue">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_info_hemo">Información Hemodiálisis</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
                     </button>
                 </div>
             </div>
 
-            <!-- Cards Paciente -->
-            <div id="cards-paciente" class="cards-container">
-                <div class="help-card">
-    <div class="card-image-container">
-        <img src="images/InformaciónHemodialisis.png" alt="Información Hemodiálisis">
-    </div>
-    <div class="card-content-wrapper">
-        <div class="card-arrow">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-        <h3 data-translate="help_info_hemo">Información Hemodiálisis</h3>
-    </div>
-</div>
-
-
-<div class="help-card">
-    <div class="card-image-container">
-        <img src="images/AgendarCitas.png" alt="Agendar Citas">
-    </div>
-    <div class="card-content-wrapper">
-        <div class="card-arrow">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-        <h3 data-translate="help_agendar">Agendar Cita</h3>
-    </div>
-</div>
-                
-
-                <div class="help-card">
-    <div class="card-image-container">
-        <img src="images/Promociones.png" alt="Promociones">
-    </div>
-    <div class="card-content-wrapper">
-        <div class="card-arrow">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-        <h3 data-translate="help_promociones">Promociones</h3>
-    </div>
-</div>
-
-
-<div class="help-card">
-    <div class="card-image-container">
-        <img src="images/CostosYSeguros.png" alt="Promociones">
-    </div>
-    <div class="card-content-wrapper">
-        <div class="card-arrow">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </div>
-        <h3 data-translate="help_costos">Costos y Seguros</h3>
-    </div>
-</div>
+            <!-- Agendar Cita -->
+            <div class="help-card" onclick="window.location.href='pages/agendar-cita.html'">
+                <div class="card-icon-container cyan">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_agendar">Agendar Cita</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Promociones -->
+            <div class="help-card" onclick="window.location.href='pages/promociones.html'">
+                <div class="card-icon-container sky">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_promociones">Promociones</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
-            <!-- Cards Cuidador -->
-             <!-- Cards Cuidador -->
-<div id="cards-cuidador" class="cards-container hidden">
-    <div class="help-card">
-        <div class="card-image-container">
-            <img src="images/GuiaCuidadores.png" alt="Guía para Cuidadores">
-        </div>
-        <div class="card-content-wrapper">
-            <div class="card-arrow">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
+            <!-- Costos y Seguros -->
+            <div class="help-card" onclick="window.location.href='pages/costos-seguros.html'">
+                <div class="card-icon-container teal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_costos">Costos y Seguros</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <h3 data-translate="help_guia">Guía para Cuidadores</h3>
+        </div>
+
+        <!-- Cards Cuidador -->
+        <div id="cards-cuidador" class="cards-container hidden">
+            <!-- Guía para Cuidadores -->
+            <div class="help-card" onclick="window.location.href='pages/guia-cuidadores.html'">
+                <div class="card-icon-container indigo">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_guia">Guía para Cuidadores</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Apoyo Psicológico -->
+            <div class="help-card" onclick="window.location.href='pages/apoyo-psicologico.html'">
+                <div class="card-icon-container purple">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_apoyo">Apoyo Psicológico</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Nutrición Familiar -->
+            <div class="help-card" onclick="window.location.href='pages/nutricion-familiar.html'">
+                <div class="card-icon-container pink">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_nutricion">Nutrición Familiar</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recursos Descargables -->
+            <div class="help-card" onclick="window.location.href='pages/recursos-descargables.html'">
+                <div class="card-icon-container orange">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                    </svg>
+                </div>
+                <div class="card-content-wrapper">
+                    <h3 data-translate="help_recursos">Recursos Descargables</h3>
+                    <button class="card-btn">
+                        <span data-translate="card_btn_text">Ver más</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="help-card">
-        <div class="card-image-container">
-            <img src="images/ApoyoPsicologico.png" alt="Apoyo Psicológico">
+</section>
+<!-- ==================== POR QUÉ ELEGIRNOS ==================== -->
+<section id="por-que-elegirnos" class="section-why-choose">
+    <div class="container">
+        <div class="why-choose-header">
+            <h2 data-translate="why_title">¿Por qué elegir MEDENS?</h2>
+            <p data-translate="why_subtitle">Comprometidos con tu bienestar y calidad de vida</p>
         </div>
-        <div class="card-content-wrapper">
-            <div class="card-arrow">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
+
+        <div class="why-grid">
+            <!-- Razón 1 -->
+            <div class="why-card">
+                <div class="why-icon blue">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_1_title">+15 Años de Experiencia</h3>
+                <p data-translate="why_1_desc">Líderes en atención nefrológica en Hidalgo</p>
             </div>
-            <h3 data-translate="help_apoyo">Apoyo Psicológico</h3>
+
+            <!-- Razón 2 -->
+            <div class="why-card">
+                <div class="why-icon cyan">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_2_title">Equipo Médico Certificado</h3>
+                <p data-translate="why_2_desc">Nefrólogos y enfermeras especializadas</p>
+            </div>
+
+            <!-- Razón 3 -->
+            <div class="why-card">
+                <div class="why-icon sky">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_3_title">Tecnología de Vanguardia</h3>
+                <p data-translate="why_3_desc">Equipos de última generación para tu seguridad</p>
+            </div>
+
+            <!-- Razón 4 -->
+            <div class="why-card">
+                <div class="why-icon teal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_4_title">Atención Personalizada</h3>
+                <p data-translate="why_4_desc">Cuidado individual adaptado a tus necesidades</p>
+            </div>
+
+            <!-- Razón 5 -->
+            <div class="why-card">
+                <div class="why-icon indigo">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_5_title">Horarios Flexibles</h3>
+                <p data-translate="why_5_desc">3 turnos diarios que se adaptan a tu vida</p>
+            </div>
+
+            <!-- Razón 6 -->
+            <div class="why-card">
+                <div class="why-icon purple">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                </div>
+                <h3 data-translate="why_6_title">Todos los Seguros</h3>
+                <p data-translate="why_6_desc">Aceptamos principales aseguradoras y planes</p>
+            </div>
+        </div>
+
+        <!-- CTA opcional -->
+        <div class="why-cta">
+            <button class="btn-primary-large" data-translate="why_cta">
+                Agenda tu Consulta Hoy
+            </button>
         </div>
     </div>
-
-    <div class="help-card">
-        <div class="card-image-container">
-            <img src="images/NutricionFamiliar.png" alt="Nutrición Familiar">
-        </div>
-        <div class="card-content-wrapper">
-            <div class="card-arrow">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-            </div>
-            <h3 data-translate="help_nutricion">Nutrición Familiar</h3>
-        </div>
-    </div>
-
-    <div class="help-card">
-        <div class="card-image-container">
-            <img src="images/RecursosDescargables.png" alt="Recursos Descargables">
-        </div>
-        <div class="card-content-wrapper">
-            <div class="card-arrow">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
-            </div>
-            <h3 data-translate="help_recursos">Recursos Descargables</h3>
-        </div>
-    </div>
-</div>
-    </section>
-
+</section>
     <!-- ==================== HORARIOS / TURNOS ==================== -->
     <section id="horarios" class="section-horarios">
         <div class="container">
             <div class="horarios-grid">
                 
-                <!-- Columna Izquierda: Imagen -->
+                <!-- Columna Izquierda: Carrusel de Imágenes -->
                 <div class="horarios-image-wrapper">
-                    <div class="horarios-image-container">
-                        <img src="images/ImgPaciente.jpg" 
-                             alt="Enfermera feliz" 
-                             class="horarios-image">
-                        <div class="image-overlay"></div>
-                        <div class="image-label">
-                            <p data-translate="horarios_label1">Encuentra tu horario ideal</p>
-                            <p data-translate="horarios_label2">Flexibilidad para tu estilo de vida</p>
+                    <div class="horarios-carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="images/carousel-sala-hemodialisis-01.jpg" 
+                                 alt="Sala de Hemodiálisis" 
+                                 class="carousel-image">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-label">
+                                <p data-translate="carousel_label1_1">Instalaciones de primer nivel</p>
+                                <p data-translate="carousel_label1_2">Tecnología de vanguardia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="images/carousel-enfermera-atencion-02.jpg" 
+                                 alt="Atención Personalizada" 
+                                 class="carousel-image">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-label">
+                                <p data-translate="carousel_label2_1">Atención personalizada</p>
+                                <p data-translate="carousel_label2_2">Personal altamente capacitado</p>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide">
+                            <img src="images/carousel-equipo-medico-03.jpg" 
+                                 alt="Equipo Médico" 
+                                 class="carousel-image">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-label">
+                                <p data-translate="carousel_label3_1">Equipo especializado</p>
+                                <p data-translate="carousel_label3_2">Tu bienestar es nuestra prioridad</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Indicadores del carrusel -->
+                        <div class="carousel-indicators">
+                            <button class="indicator active" data-slide="0"></button>
+                            <button class="indicator" data-slide="1"></button>
+                            <button class="indicator" data-slide="2"></button>
                         </div>
                     </div>
                 </div>
@@ -514,6 +475,8 @@
         </div>
     </section>
 
+    
+
     <!-- ==================== UBICACIÓN / CONTACTO ==================== -->
     <section id="contacto" class="section-contacto">
         <div class="contacto-bg"></div>
@@ -556,7 +519,7 @@
                             </svg>
                             <div class="contacto-item-content">
                                 <p data-translate="contacto_telefono_label">Teléfono</p>
-                                <a href="tel:+527731234567">(773) 123-4567</a>
+                                <a href="tel:+52(773) 73 242 94">(773) 73 242 94</a>
                             </div>
                         </div>
                     </div>
@@ -588,19 +551,19 @@
                 <div class="contacto-mapa-wrapper">
                     <!-- Imagen pequeña del hospital -->
                     <div class="hospital-image-card">
-    <img src="images/EdificioMEDENS.png" alt="Grupo Hospitalario Medens"/>
-    
-    <div class="hospital-overlay-card">
-        <div class="hospital-badge">
-            <div class="badge-icon">
-                <svg fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                </svg>
-            </div>
-            <span data-translate="hospital_badge">MEDENS</span>
-        </div>
-    </div>
-</div>
+                        <img src="images/GrupoHospitalarioMedens.jpg" alt="Grupo Hospitalario Medens"/>
+                        
+                        <div class="hospital-overlay-card">
+                            <div class="hospital-badge">
+                                <div class="badge-icon">
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="hospital_badge">MEDENS</span>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="mapa-container">
                         <iframe 
@@ -613,7 +576,7 @@
                     
                     <!-- Etiqueta flotante -->
                     <div class="mapa-label">
-                        📍 Tula de Allende, Hidalgo
+                    Tula de Allende, Hidalgo
                     </div>
                 </div>
             </div>
@@ -635,6 +598,11 @@
     </div>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script src="scripts.js"></script>
+    <script src="js/medens-components.js"></script>
+    <script src="js/medens-global.js"></script>
+    <script src="js/medens-translations.js"></script>
+    
+    <!-- Scripts específicos (si existen) -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>

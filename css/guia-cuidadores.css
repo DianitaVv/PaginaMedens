@@ -1,0 +1,821 @@
+/* =====================================================
+   PÁGINA GUÍA PARA CUIDADORES - VERSIÓN MEJORADA
+   ===================================================== */
+
+/* Container principal - IMPORTANTE PARA MÁRGENES */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero */
+.caregiver-hero {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    padding: 8rem 2rem 4rem;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.caregiver-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+}
+
+.caregiver-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
+}
+
+.breadcrumb span:last-child {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.caregiver-hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.caregiver-hero-content > p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Section tag */
+.section-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--medens-blue), #0a7fc6);
+    color: white;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Section header centered */
+.section-header-centered {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+}
+
+.section-header-centered h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+}
+
+body.dark .section-header-centered h2 {
+    color: white;
+}
+
+.section-header-centered > p {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+}
+
+body.dark .section-header-centered > p {
+    color: var(--gray-400);
+}
+
+/* Intro */
+.intro-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+body.dark .intro-section {
+    background-color: var(--gray-900);
+}
+
+.intro-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-icon {
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(135deg, #fecaca, #fca5a5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+}
+
+.intro-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #dc2626;
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gray-800);
+    margin-bottom: 1.5rem;
+}
+
+body.dark .intro-content h2 {
+    color: white;
+}
+
+.intro-content p {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+body.dark .intro-content p {
+    color: var(--gray-300);
+}
+
+/* Role Section */
+.role-section {
+    padding: 5rem 0;
+    background-color: var(--gray-50);
+}
+
+body.dark .role-section {
+    background-color: var(--gray-800);
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.role-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .role-card {
+    background-color: var(--gray-900);
+}
+
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.role-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: #059669;
+}
+
+.role-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.75rem;
+}
+
+body.dark .role-card h3 {
+    color: white;
+}
+
+.role-card p {
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+body.dark .role-card p {
+    color: var(--gray-400);
+}
+
+/* Practical Section - Accordion */
+.practical-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+body.dark .practical-section {
+    background-color: var(--gray-900);
+}
+
+.accordion-container {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: white;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+body.dark .accordion-item {
+    background-color: var(--gray-800);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+body.dark .accordion-header {
+    color: white;
+}
+
+.accordion-header:hover {
+    background-color: var(--gray-50);
+}
+
+body.dark .accordion-header:hover {
+    background-color: var(--gray-700);
+}
+
+.accordion-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--medens-blue);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+body.dark .accordion-icon {
+    color: #60a5fa;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.5rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 800px;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.practical-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.practical-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    color: var(--gray-600);
+    position: relative;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+body.dark .practical-list li {
+    color: var(--gray-400);
+    border-bottom-color: var(--gray-700);
+}
+
+.practical-list li:last-child {
+    border-bottom: none;
+}
+
+.practical-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.alert-intro {
+    color: var(--gray-700);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+body.dark .alert-intro {
+    color: var(--gray-300);
+}
+
+.alert-list li::before {
+    content: '⚠';
+    color: #f59e0b;
+}
+
+/* Selfcare Section */
+.selfcare-section {
+    padding: 5rem 0;
+    background-color: var(--gray-50);
+}
+
+body.dark .selfcare-section {
+    background-color: var(--gray-800);
+}
+
+.selfcare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.selfcare-content .lead-text {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+body.dark .selfcare-content .lead-text {
+    color: var(--gray-300);
+}
+
+.selfcare-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+}
+
+body.dark .selfcare-content h2 {
+    color: white;
+}
+
+.selfcare-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tip-item {
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .tip-item {
+    background-color: var(--gray-900);
+}
+
+.tip-icon {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tip-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #d97706;
+}
+
+.tip-text h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+body.dark .tip-text h4 {
+    color: white;
+}
+
+.tip-text p {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+body.dark .tip-text p {
+    color: var(--gray-400);
+}
+
+/* Selfcare Visual */
+.selfcare-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.quote-card {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    position: relative;
+}
+
+body.dark .quote-card {
+    background: linear-gradient(135deg, var(--gray-700), var(--gray-600));
+}
+
+.quote-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+}
+
+.quote-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--gray-800);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+body.dark .quote-text {
+    color: white;
+}
+
+.quote-author {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    font-weight: 600;
+}
+
+body.dark .quote-author {
+    color: var(--gray-400);
+}
+
+.warning-card {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.75rem;
+    padding: 2rem;
+}
+
+body.dark .warning-card {
+    background-color: #78350f;
+    border-left-color: #fbbf24;
+}
+
+.warning-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+body.dark .warning-icon {
+    background-color: #92400e;
+}
+
+.warning-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #f59e0b;
+}
+
+body.dark .warning-icon svg {
+    color: #fbbf24;
+}
+
+.warning-card h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #78350f;
+    margin-bottom: 1rem;
+}
+
+body.dark .warning-card h4 {
+    color: #fef3c7;
+}
+
+.warning-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.warning-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: #78350f;
+    position: relative;
+    font-size: 0.875rem;
+}
+
+body.dark .warning-card ul li {
+    color: #fde68a;
+}
+
+.warning-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.warning-note {
+    font-size: 0.875rem;
+    color: #92400e;
+    font-weight: 600;
+}
+
+body.dark .warning-note {
+    color: #fbbf24;
+}
+
+/* Resources Section */
+.resources-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+body.dark .resources-section {
+    background-color: var(--gray-900);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.resource-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .resource-card {
+    background-color: var(--gray-800);
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.resource-icon {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.resource-icon.phone {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.resource-icon.download {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.resource-icon.group {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+}
+
+.resource-icon.workshop {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.resource-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--gray-700);
+}
+
+.resource-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.75rem;
+}
+
+body.dark .resource-card h3 {
+    color: white;
+}
+
+.resource-card p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+body.dark .resource-card p {
+    color: var(--gray-400);
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--medens-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.3s;
+}
+
+body.dark .resource-link {
+    color: #60a5fa;
+}
+
+.resource-link:hover {
+    gap: 1rem;
+}
+
+.resource-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--medens-blue), #0a7fc6);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-content > p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-primary-large {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    color: var(--medens-blue);
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary-large {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-secondary-large:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .role-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .caregiver-hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .role-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .selfcare-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
