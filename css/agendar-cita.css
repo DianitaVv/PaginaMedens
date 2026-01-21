@@ -492,3 +492,135 @@ body.dark .modal-content p {
         grid-template-columns: 1fr 1.5fr;
     }
 }
+
+/* =====================================================
+   DESCRIPCIÓN DE TIPO DE CONSULTA
+   ===================================================== */
+
+.consulta-description {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-left: 4px solid var(--medens-blue);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+body.dark .consulta-description {
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    border-left-color: #60a5fa;
+}
+
+.consulta-description.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.description-content {
+    flex: 1;
+}
+
+.description-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0 0 0.5rem 0;
+}
+
+body.dark .description-content h4 {
+    color: white;
+}
+
+.description-content p {
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+    margin: 0 0 0.75rem 0;
+}
+
+body.dark .description-content p {
+    color: var(--gray-300);
+}
+
+.description-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--medens-blue);
+    font-weight: 600;
+}
+
+body.dark .description-meta {
+    color: #60a5fa;
+}
+
+.description-meta svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.description-close {
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--gray-700);
+}
+
+body.dark .description-close {
+    color: var(--gray-400);
+}
+
+body.dark .description-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--gray-200);
+}
+
+.description-close svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Responsive para descripciones */
+@media (max-width: 768px) {
+    .consulta-description {
+        flex-direction: column;
+        padding: 1.25rem;
+    }
+    
+    .description-icon {
+        font-size: 1.75rem;
+    }
+    
+    .description-close {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+}

@@ -358,6 +358,20 @@ body.dark .mobile-menu-content a:hover {
 /* =====================================================
    SELECTOR DE IDIOMA
    ===================================================== */
+   .language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+body.dark .language-dropdown {
+    background: var(--gray-800);
+}
 .language-selector {
     position: relative;
 }
@@ -592,26 +606,29 @@ body.dark .hero-overlay {
     z-index: 10;
     text-align: left;
     padding: 0 2rem;
-    max-width: 85rem;
+    max-width: 95rem;
     margin: 0 auto;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 1rem;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: clamp(4rem, 7vw, 8rem);
     font-weight: 800;
     color: white;
     margin-bottom: 2rem;
-    line-height: 1.1;
+    line-height: 1.05;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
-    max-width: 55rem;
+    max-width: none;
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    
 }
+
 
 @keyframes fadeInUp {
     0% {
@@ -744,32 +761,7 @@ body.dark .hero-overlay {
 }
 
 /* Responsive Hero */
-@media (min-width: 640px) {
-    .hero-title {
-        font-size: 3.25rem;
-    }
-}
 
-@media (min-width: 768px) {
-    .hero-title {
-        font-size: 4rem;
-    }
-    
-    .card-content {
-        padding: 2.5rem;
-        min-height: 120px;
-    }
-    
-    .card-content h3 {
-        font-size: 1.35rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 4.75rem;
-    }
-}
 /* =====================================================
    SECCIÓN: ¿CÓMO PODEMOS AYUDARTE? - CON ICONOS
    ===================================================== */

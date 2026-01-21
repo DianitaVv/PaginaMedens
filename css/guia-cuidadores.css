@@ -741,6 +741,8 @@ body.dark .resource-link {
     margin-bottom: 2rem;
 }
 
+
+
 .cta-buttons {
     display: flex;
     flex-direction: column;
@@ -748,11 +750,11 @@ body.dark .resource-link {
     align-items: center;
 }
 
-.btn-primary-large {
+.btn-cta {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background-color: white;
-    color: var(--medens-blue);
+    background-color: white;          /* ← Fondo blanco */
+    color: var(--medens-blue);        /* ← Texto azul */
     border-radius: 3rem;
     font-weight: 600;
     font-size: 1.125rem;
@@ -761,27 +763,10 @@ body.dark .resource-link {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.btn-primary-large:hover {
+.btn-cta:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.btn-secondary-large {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 3rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-secondary-large:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    background-color: #f8fafc;        /* ← Hover más claro */
 }
 
 /* Responsive */

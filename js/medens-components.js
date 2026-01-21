@@ -27,13 +27,15 @@ const MedensComponents = {
                     
                     <!-- Menú Desktop -->
                     <div class="menu-desktop">
+                    
+
                         <a href="${basePath}index.html#inicio" data-translate="nav_inicio">Inicio</a>
-                        <a href="${basePath}index.html#servicios" data-translate="nav_servicios">Servicios</a>
-                        <a href="${basePath}index.html#nosotros" data-translate="nav_nosotros">Nosotros</a>
+                        <a href="${basePath}index.html#section-help" data-translate="nav_servicios">Ayuda</a>
+                        <a href="${basePath}index.html#por-que-elegirnos" data-translate="nav_nosotros">¿Por qué elegirnos?</a>
                         <a href="${basePath}index.html#horarios" data-translate="nav_horarios">Horarios</a>
                         <a href="${basePath}index.html#contacto" data-translate="nav_contacto">Contacto</a>
                         
-                        <button class="btn-agendar" data-translate="btn_agendar">Agendar Cita</button>
+                        <button class="btn-agendar" data-translate="btn_agendar" onclick="window.location.href='pages/agendar-cita.html'">Agendar Cita</button>
                         
                         <!-- Toggle de tema -->
                         <button id="theme-toggle" class="theme-toggle-btn">
@@ -103,11 +105,12 @@ const MedensComponents = {
             <div id="mobile-menu" class="mobile-menu hidden">
                 <div class="mobile-menu-content">
                     <a href="${basePath}index.html#inicio" data-translate="nav_inicio">Inicio</a>
-                    <a href="${basePath}index.html#servicios" data-translate="nav_servicios">Servicios</a>
-                    <a href="${basePath}index.html#nosotros" data-translate="nav_nosotros">Nosotros</a>
+                    <a href="${basePath}index.html#section-help" data-translate="nav_servicios">Ayuda</a>
+                    <a href="${basePath}index.html#por-que-elegirnos" data-translate="nav_nosotros">¿Por qué elegirnos?</a>
                     <a href="${basePath}index.html#horarios" data-translate="nav_horarios">Horarios</a>
                     <a href="${basePath}index.html#contacto" data-translate="nav_contacto">Contacto</a>
-                    <button class="btn-agendar" data-translate="btn_agendar">Agendar Cita</button>
+                    <button class="btn-agendar" data-translate="btn_agendar" onclick="window.location.href='pages/agendar-cita.html'">Agendar Cita</button>
+                  
                 </div>
             </div>
         </nav>
@@ -127,20 +130,12 @@ const MedensComponents = {
         }
     },
 
-    injectFooter() {
-        const footerPlaceholder = document.getElementById('footer-placeholder');
-        if (footerPlaceholder) {
-            footerPlaceholder.innerHTML = this.getFooterHTML();
-        } else {
-            // Si no hay placeholder, insertar al final del body
-            document.body.insertAdjacentHTML('beforeend', this.getFooterHTML());
-        }
-    },
+    
 
     // ==================== INICIALIZACIÓN ====================
     init() {
         this.injectNavbar();
-        this.injectFooter();
+    
         
         // Disparar evento personalizado para que MedensApp sepa que el navbar está listo
         document.dispatchEvent(new Event('navbarLoaded'));

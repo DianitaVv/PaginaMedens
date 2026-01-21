@@ -126,17 +126,17 @@ const turnoDetalles = document.getElementById('turno-detalles');
 const turnos = {
     'turno-matutino': {
         horario: '6:00 AM - 10:00 AM',
-        detalles: 'El turno matutino es ideal para personas que prefieren comenzar temprano. Tendrás toda la tarde libre para realizar otras actividades.',
+        detalles: 'Turno para personas que prefieren comenzar temprano. Tendrás toda la tarde libre para realizar otras actividades.',
         color: 'blue'
     },
     'turno-medio': {
         horario: '10:00 AM - 2:00 PM',
-        detalles: 'Horario intermedio perfecto para quienes buscan flexibilidad. Compatible con la mayoría de rutinas laborales y escolares.',
+        detalles: 'Turno perfecto para quienes buscan flexibilidad. Compatible con la mayoría de rutinas laborales y escolares.',
         color: 'orange'
     },
     'turno-tarde': {
         horario: '2:00 PM - 6:00 PM',
-        detalles: 'Turno vespertino ideal si prefieres aprovechar las mañanas. Perfecto para quienes trabajan en horario matutino.',
+        detalles: 'Turno ideal si prefieres aprovechar las mañanas. Perfecto para quienes trabajan en horario matutino.',
         color: 'teal'
     }
 };
