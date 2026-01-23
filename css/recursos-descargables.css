@@ -894,7 +894,7 @@ body.dark .triptico-modal-header {
 .triptico-viewer {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: var(--gray-100);
     overflow: auto;
@@ -906,15 +906,11 @@ body.dark .triptico-viewer {
 }
 
 #pdf-canvas {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    width: auto;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
     background-color: white;
     display: block;
-    margin: 0 auto;
+    transition: transform 0.3s ease;
 }
 
 .triptico-controls {

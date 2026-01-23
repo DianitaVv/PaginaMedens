@@ -866,48 +866,49 @@ body.dark .faq-item p {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     background-color: #f8fafc;        /* ← Hover más claro */
 }
-
-
-/* Responsive */
+/* Responsive - AGREGAR AL FINAL */
 @media (min-width: 640px) {
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .insurance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .payment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .discounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .faq-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 768px) {
-    .hero-info-content h1 {
+    .costs-hero-content h1 {
         font-size: 3.5rem;
-    }
-    
-    .content-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .content-grid.reverse .content-text {
-        order: 1;
-    }
-    
-    .content-grid.reverse .content-image {
-        order: 2;
-    }
-    
-    .process-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .care-columns {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .cta-buttons {
-        flex-direction: row;
-        justify-content: center;
     }
 }
 
 @media (min-width: 1024px) {
-    .faq-grid {
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr);  /* ← ESTO FALTABA */
+    }
+    
+    .insurance-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .payment-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .discounts-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

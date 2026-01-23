@@ -453,15 +453,18 @@ body.dark .how-to-apply {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    align-items: center;
+    align-items: stretch; /* Fuerza altura igual */
 }
 
 .step-card {
     background-color: white;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 2.5rem 2rem 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; /* Altura mínima consistente */
 }
 
 body.dark .step-card {
@@ -501,6 +504,7 @@ body.dark .step-card h3 {
     color: var(--gray-600);
     line-height: 1.7;
     margin-bottom: 1.5rem;
+    flex: 1; /* Ocupa espacio disponible */
 }
 
 body.dark .step-card p {
@@ -515,6 +519,7 @@ body.dark .step-card p {
     font-weight: 600;
     text-decoration: none;
     transition: gap 0.3s;
+    margin-top: auto; /* Empuja al fondo */
 }
 
 body.dark .step-link {
@@ -541,70 +546,24 @@ body.dark .step-link {
     height: 2rem;
 }
 
-/* Términos */
-.terms-section {
-    padding: 5rem 0;
-    background-color: white;
+/* Responsive */
+@media (min-width: 768px) {
+    .steps-container {
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .step-card {
+        min-height: 320px; /* Desktop: altura consistente */
+    }
 }
 
-body.dark .terms-section {
-    background-color: var(--gray-900);
-}
-
-.terms-card {
-    background-color: var(--gray-50);
-    border-radius: 1rem;
-    padding: 2rem;
-    border-left: 4px solid var(--card-orange);
-}
-
-body.dark .terms-card {
-    background-color: var(--gray-800);
-}
-
-.terms-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--gray-800);
-    margin-bottom: 1.5rem;
-}
-
-body.dark .terms-card h3 {
-    color: white;
-}
-
-.terms-list {
-    list-style: none;
-    padding: 0;
-}
-
-.terms-list li {
-    padding: 0.75rem 0;
-    padding-left: 1.5rem;
-    color: var(--gray-600);
-    position: relative;
-    border-bottom: 1px solid var(--gray-200);
-    font-size: 0.875rem;
-}
-
-body.dark .terms-list li {
-    color: var(--gray-400);
-    border-bottom-color: var(--gray-700);
-}
-
-.terms-list li:last-child {
-    border-bottom: none;
-}
-
-.terms-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--card-orange);
-    font-weight: bold;
-}
-
-/* CTA Final */
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, var(--medens-blue), #0a7fc6);

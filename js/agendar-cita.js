@@ -79,7 +79,6 @@ function getConsultaTypeText(value) {
     const tipos = {
         'primera-vez': 'Primera vez / Consulta inicial',
         'informacion': 'Información sobre tratamiento',
-        'cambio-clinica': 'Cambio de clínica',
         'valoracion': 'Valoración médica',
         'costos': 'Información de costos'
     };
@@ -109,12 +108,7 @@ const consultaDescriptions = {
         duration: '30 minutos aprox.',
         icon: ''
     },
-    'cambio-clinica': {
-        title: 'Cambio de clínica',
-        description: 'Facilitamos tu transición desde otra clínica. Revisaremos tu historial médico, coordinaremos el traslado de documentos y ajustaremos el tratamiento a nuestras instalaciones.',
-        duration: '45 minutos aprox.',
-        icon: ''
-    },
+
     'valoracion': {
         title: 'Valoración médica',
         description: 'Un nefrólogo evaluará tu condición actual, revisará resultados de laboratorio recientes y determinará el mejor plan de tratamiento para tu caso específico.',

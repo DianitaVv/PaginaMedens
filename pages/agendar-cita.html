@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Cita - MEDENS</title>
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="../images/logo.png" type="image/png">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/agendar-cita.css">
 </head>
@@ -12,18 +12,18 @@
 <body>
     
     <!-- ==================== NAVEGACIÓN ==================== -->
-     <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
 
     <!-- ==================== HERO ==================== -->
     <section class="appointment-hero">
         <div class="appointment-hero-content">
             <div class="breadcrumb">
-                <a href="../index.html">Inicio</a>
+                <a href="../index.html" data-translate="appt_breadcrumb_home">Inicio</a>
                 <span>/</span>
-                <span>Agendar Cita</span>
+                <span data-translate="appt_breadcrumb_current">Agendar Cita</span>
             </div>
-            <h1>Agenda tu Consulta</h1>
-            <p>Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo pronto.</p>
+            <h1 data-translate="appt_hero_title">Agenda tu Consulta</h1>
+            <p data-translate="appt_hero_subtitle">Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo pronto.</p>
         </div>
     </section>
 
@@ -34,7 +34,7 @@
             <!-- Columna izquierda: Información -->
             <div class="appointment-info">
                 <div class="info-card">
-                    <h2>¿Por qué agendar con nosotros?</h2>
+                    <h2 data-translate="appt_why_title">¿Por qué agendar con nosotros?</h2>
                     <div class="feature-list">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -43,12 +43,10 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h3>Respuesta Rápida</h3>
-                                <p>Te contactamos en menos de 24 horas</p>
+                                <h3 data-translate="appt_feature1_title">Respuesta Rápida</h3>
+                                <p data-translate="appt_feature1_desc">Te contactamos en menos de 24 horas</p>
                             </div>
                         </div>
-
-                    
 
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -57,8 +55,8 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h3>Horarios Flexibles</h3>
-                                <p>Adaptamos el horario a tu rutina</p>
+                                <h3 data-translate="appt_feature2_title">Horarios Flexibles</h3>
+                                <p data-translate="appt_feature2_desc">Adaptamos el horario a tu rutina</p>
                             </div>
                         </div>
 
@@ -69,15 +67,15 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h3>Atención Personalizada</h3>
-                                <p>Escuchamos tus necesidades</p>
+                                <h3 data-translate="appt_feature3_title">Atención Personalizada</h3>
+                                <p data-translate="appt_feature3_desc">Escuchamos tus necesidades</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-methods">
-                    <h3>Otras formas de contacto</h3>
+                    <h3 data-translate="appt_contact_title">Otras formas de contacto</h3>
                     
                     <a href="tel:7731234567" class="contact-method">
                         <div class="method-icon phone">
@@ -86,20 +84,8 @@
                             </svg>
                         </div>
                         <div class="method-text">
-                            <h4>Llámanos</h4>
+                            <h4 data-translate="appt_contact_phone_title">Llámanos</h4>
                             <p>(773) 73 242 94</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="contact-method">
-                        <div class="method-icon whatsapp">
-                            <svg fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                            </svg>
-                        </div>
-                        <div class="method-text">
-                            <h4>WhatsApp</h4>
-                            <p>Chat directo</p>
                         </div>
                     </a>
 
@@ -111,8 +97,8 @@
                             </svg>
                         </div>
                         <div class="method-text">
-                            <h4>Visítanos</h4>
-                            <p>Tula de Allende, Hidalgo</p>
+                            <h4 data-translate="appt_contact_location_title">Visítanos</h4>
+                            <p data-translate="appt_contact_location_text">Tula de Allende, Hidalgo</p>
                         </div>
                     </div>
                 </div>
@@ -122,82 +108,81 @@
             <div class="appointment-form-container">
                 <div class="form-card">
                     <div class="form-header">
-                        <h2>Completa tus datos</h2>
-                        <p>Todos los campos son obligatorios</p>
+                        <h2 data-translate="appt_form_header_title">Completa tus datos</h2>
+                        <p data-translate="appt_form_header_subtitle">Todos los campos son obligatorios</p>
                     </div>
 
                     <form id="appointmentForm" class="appointment-form">
                         <!-- Tipo de consulta -->
                         <div class="form-group">
-                            <label for="consultaType">¿Qué necesitas?</label>
+                            <label for="consultaType" data-translate="appt_form_type_label">¿Qué necesitas?</label>
                             <select id="consultaType" name="consultaType" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="primera-vez">Primera vez / Consulta inicial</option>
-                                <option value="informacion">Información sobre tratamiento</option>
-                                <option value="cambio-clinica">Cambio de clínica</option>
-                                <option value="valoracion">Valoración médica</option>
-                                <option value="costos">Información de costos</option>
+                                <option value="" data-translate="appt_form_type_placeholder">Selecciona una opción</option>
+                                <option value="primera-vez" data-translate="appt_form_type_option1">Primera vez / Consulta inicial</option>
+                                <option value="informacion" data-translate="appt_form_type_option2">Información sobre tratamiento</option>
+                                <option value="valoracion" data-translate="appt_form_type_option3">Valoración médica</option>
+                                <option value="costos" data-translate="appt_form_type_option4">Información de costos</option>
                             </select>
                         </div>
 
                         <!-- Nombre completo -->
                         <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                            <label for="nombre" data-translate="appt_form_name_label">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" data-placeholder-key="appt_form_name_placeholder" placeholder="Tu nombre completo" required>
                         </div>
 
                         <!-- Teléfono y Email -->
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required>
+                                <label for="telefono" data-translate="appt_form_phone_label">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" data-placeholder-key="appt_form_phone_placeholder" placeholder="10 dígitos" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Correo electrónico</label>
-                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                <label for="email" data-translate="appt_form_email_label">Correo electrónico</label>
+                                <input type="email" id="email" name="email" data-placeholder-key="appt_form_email_placeholder" placeholder="tu@email.com" required>
                             </div>
                         </div>
 
                         <!-- Fecha preferida y horario -->
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="fecha">Fecha preferida</label>
+                                <label for="fecha" data-translate="appt_form_date_label">Fecha preferida</label>
                                 <input type="date" id="fecha" name="fecha" required>
                             </div>
                             <div class="form-group">
-                                <label for="horario">Horario preferido</label>
+                                <label for="horario" data-translate="appt_form_time_label">Horario preferido</label>
                                 <select id="horario" name="horario" required>
-                                    <option value="">Selecciona</option>
-                                    <option value="matutino">Matutino (6AM - 10AM)</option>
-                                    <option value="medio">Medio día (10AM - 2PM)</option>
-                                    <option value="tarde">Tarde (2PM - 6PM)</option>
+                                    <option value="" data-translate="appt_form_time_placeholder">Selecciona</option>
+                                    <option value="matutino" data-translate="appt_form_time_option1">Matutino (6AM - 10AM)</option>
+                                    <option value="medio" data-translate="appt_form_time_option2">Medio día (10AM - 2PM)</option>
+                                    <option value="tarde" data-translate="appt_form_time_option3">Tarde (2PM - 6PM)</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- Mensaje adicional -->
                         <div class="form-group">
-                            <label for="mensaje">Cuéntanos más (opcional)</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Algo más que debamos saber?"></textarea>
+                            <label for="mensaje" data-translate="appt_form_message_label">Cuéntanos más (opcional)</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" data-placeholder-key="appt_form_message_placeholder" placeholder="¿Algo más que debamos saber?"></textarea>
                         </div>
 
                         <!-- Checkbox de privacidad -->
                         <div class="form-checkbox">
                             <input type="checkbox" id="privacidad" name="privacidad" required>
-                            <label for="privacidad">
+                            <label for="privacidad" data-translate="appt_form_privacy_label">
                                 Acepto el tratamiento de mis datos personales conforme a la política de privacidad
                             </label>
                         </div>
 
                         <!-- Botón de envío -->
                         <button type="submit" class="btn-submit">
-                            <span>Enviar Solicitud</span>
+                            <span data-translate="appt_form_submit">Enviar Solicitud</span>
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
                         </button>
 
-                        <p class="form-note">
+                        <p class="form-note" data-translate="appt_form_note">
                             Te contactaremos en menos de 24 horas para confirmar tu cita
                         </p>
                     </form>
@@ -215,16 +200,18 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             </div>
-            <h2>Solicitud Enviada</h2>
-            <p>Gracias por confiar en MEDENS. Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.</p>
-            <button onclick="closeModal()" class="btn-close-modal">Entendido</button>
+            <h2 data-translate="appt_modal_title">Solicitud Enviada</h2>
+            <p data-translate="appt_modal_message">Gracias por confiar en MEDENS. Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.</p>
+            <button onclick="closeModal()" class="btn-close-modal" data-translate="appt_modal_button">Entendido</button>
         </div>
     </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <!-- ==================== SCRIPTS ==================== -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script src="../js/medens-translations.js"></script>
     <script src="../js/medens-components.js"></script>
     <script src="../js/medens-global.js"></script>
-    <script src="../js/medens-translations.js"></script>
     <script src="../js/scripts.js"></script>
     <script src="../js/agendar-cita.js"></script>
 </body>

@@ -94,14 +94,16 @@ function renderPage(num) {
         const containerWidth = container.clientWidth - 40; // 40px para padding
         const containerHeight = container.clientHeight - 40;
         
-        // Calcular escala para que se ajuste al contenedor
+        // Calcular escala base para que se ajuste al contenedor (solo la primera vez)
         const viewport = page.getViewport({ scale: 1 });
         const scaleX = containerWidth / viewport.width;
         const scaleY = containerHeight / viewport.height;
         
-        // Usar la escala más pequeña para que quepa completo
-        const autoScale = Math.min(scaleX, scaleY);
-        const finalScale = autoScale * scale;
+        // Base scale para ajustar al contenedor
+        const baseScale = Math.min(scaleX, scaleY);
+        
+        // Aplicar el zoom del usuario multiplicando la escala base
+        const finalScale = baseScale * scale;
         
         const scaledViewport = page.getViewport({ scale: finalScale });
         canvas.height = scaledViewport.height;

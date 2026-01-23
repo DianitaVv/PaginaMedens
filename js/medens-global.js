@@ -149,16 +149,27 @@ const MedensApp = {
     },
 
     translatePage() {
-        if (!this.translations) return;
-        
-        const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (this.translations[key] && this.translations[key][this.currentLang]) {
-                element.textContent = this.translations[key][this.currentLang];
-            }
-        });
-    },
+    if (!this.translations) return;
+    
+    // Traducir elementos con data-translate
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (this.translations[key] && this.translations[key][this.currentLang]) {
+            element.textContent = this.translations[key][this.currentLang];
+        }
+    });
+    
+    // Traducir placeholders de inputs y textareas
+    const placeholderElements = document.querySelectorAll('[data-placeholder-key]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-placeholder-key');
+        if (this.translations[key] && this.translations[key][this.currentLang]) {
+            element.placeholder = this.translations[key][this.currentLang];
+        }
+    });
+},
+    
 
     // ==================== MENÚ MOBILE ====================
    // ==================== MENÚ MOBILE ====================
@@ -209,12 +220,12 @@ initMobileMenu() {
 
     // ==================== INICIALIZACIÓN ====================
     init() {
-         console.log('🎬 Iniciando MedensApp...');
+       
     this.initTheme();
     this.initLanguage();
     this.initMobileMenu();  // ← ¿ESTÁ ESTA LÍNEA?
     this.initSmoothScroll();
-    console.log('✅ MedensApp inicializado');
+    
 }
 };
 
