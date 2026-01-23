@@ -90,12 +90,13 @@ body.dark {
 }
 
 /* =====================================================
-   NAVEGACIÓN MEJORADA
+   NAVEGACIÓN - LIMPIO Y OPTIMIZADO
    ===================================================== */
+
 nav {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
     position: fixed;
     width: 100%;
     top: 0;
@@ -110,16 +111,17 @@ body.dark nav {
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    height: 4rem; /* Mobile: más pequeño */
 }
 
+/* ==================== LOGO ==================== */
 .logo-container {
     flex-shrink: 0;
     transition: transform 0.3s ease;
@@ -130,35 +132,38 @@ body.dark nav {
 }
 
 .logo {
-    height: 4rem;
+    height: 2.5rem; /* Mobile: más pequeño */
     width: auto;
 }
 
-/* Menú Desktop Mejorado */
+/* ==================== MENÚ DESKTOP ==================== */
 .menu-desktop {
-    display: none;
+    display: none; /* Oculto por defecto (mobile) */
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .menu-desktop a {
     color: var(--gray-700);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     font-weight: 500;
     position: relative;
-    padding: 0.5rem 0;
 }
 
 .menu-desktop a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 2px;
     background: linear-gradient(to right, var(--medens-blue), var(--accent-sky));
     transition: width 0.3s ease;
+}
+
+.menu-desktop a:hover {
+    color: var(--medens-blue-light);
 }
 
 .menu-desktop a:hover::after {
@@ -169,37 +174,19 @@ body.dark .menu-desktop a {
     color: var(--gray-200);
 }
 
-.menu-desktop a:hover {
-    color: var(--medens-blue-light);
-}
-
+/* ==================== BOTÓN AGENDAR ==================== */
 .btn-agendar {
     background: linear-gradient(135deg, var(--medens-blue-dark), var(--medens-blue));
     color: white;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(3, 105, 161, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-agendar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.btn-agendar:hover::before {
-    left: 100%;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-agendar:hover {
@@ -207,16 +194,17 @@ body.dark .menu-desktop a {
     box-shadow: 0 8px 20px rgba(3, 105, 161, 0.4);
 }
 
+/* ==================== BOTÓN TEMA ==================== */
 .theme-toggle-btn {
     background: none;
     border: none;
     cursor: pointer;
     color: var(--gray-700);
-    transition: all 0.3s ease;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 body.dark .theme-toggle-btn {
@@ -226,7 +214,6 @@ body.dark .theme-toggle-btn {
 .theme-toggle-btn:hover {
     color: var(--medens-blue);
     background-color: var(--gray-100);
-    transform: rotate(15deg);
 }
 
 body.dark .theme-toggle-btn:hover {
@@ -234,32 +221,111 @@ body.dark .theme-toggle-btn:hover {
 }
 
 .theme-toggle-btn svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
-.whatsapp-link {
-    color: #25D366;
-    transition: all 0.3s ease;
+/* ==================== SELECTOR DE IDIOMA ==================== */
+.language-selector {
+    position: relative;
+}
+
+.language-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-700);
+    padding: 0.5rem 0.75rem;
     display: flex;
     align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
 }
 
-.whatsapp-link:hover {
-    color: #128C7E;
-    transform: scale(1.1);
+body.dark .language-toggle-btn {
+    color: var(--gray-200);
 }
 
-.whatsapp-link svg {
-    width: 2rem;
-    height: 2rem;
+.language-toggle-btn:hover {
+    color: var(--medens-blue);
+    background-color: var(--gray-100);
 }
 
-/* Menú Mobile Mejorado */
+body.dark .language-toggle-btn:hover {
+    background-color: var(--gray-800);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem;
+    min-width: 120px;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.language-dropdown.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+body.dark .language-dropdown {
+    background: var(--gray-800);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.language-option,
+.language-option-mobile {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: block;
+    color: var(--gray-700);
+    transition: all 0.2s;
+    text-align: left;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+body.dark .language-option,
+body.dark .language-option-mobile {
+    color: var(--gray-200);
+}
+
+.language-option:hover,
+.language-option-mobile:hover {
+    background-color: var(--gray-100);
+}
+
+body.dark .language-option:hover,
+body.dark .language-option-mobile:hover {
+    background-color: var(--gray-700);
+}
+
+.language-option.active,
+.language-option-mobile.active {
+    background-color: var(--medens-blue);
+    color: white;
+}
+
+/* ==================== MENÚ MOBILE (BOTONES) ==================== */
 .menu-mobile-buttons {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .mobile-menu-btn {
@@ -270,7 +336,6 @@ body.dark .theme-toggle-btn:hover {
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
 }
 
 body.dark .mobile-menu-btn {
@@ -279,29 +344,17 @@ body.dark .mobile-menu-btn {
 
 .mobile-menu-btn:hover {
     color: var(--medens-blue);
-    transform: scale(1.1);
 }
 
 .mobile-menu-btn svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
 }
 
+/* ==================== MENÚ MOBILE (DESPLEGABLE) ==================== */
 .mobile-menu {
     background-color: #ffffff;
     border-top: 1px solid var(--gray-200);
-    animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 body.dark .mobile-menu {
@@ -309,11 +362,15 @@ body.dark .mobile-menu {
     border-top-color: var(--gray-700);
 }
 
+.mobile-menu.hidden {
+    display: none;
+}
+
 .mobile-menu-content {
-    padding: 1rem 1rem 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .mobile-menu-content a {
@@ -342,36 +399,57 @@ body.dark .mobile-menu-content a:hover {
 
 .mobile-menu-content .btn-agendar {
     width: 100%;
+    text-align: center;
     margin-top: 0.5rem;
 }
 
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablet y Desktop */
 @media (min-width: 768px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
+    
+    .nav-content {
+        height: 5rem; /* Desktop: más alto */
+    }
+    
+    .logo {
+        height: 4rem; /* Desktop: más grande */
+    }
+    
     .menu-desktop {
-        display: flex;
+        display: flex; /* Mostrar desktop */
     }
     
     .menu-mobile-buttons {
-        display: none;
+        display: none; /* Ocultar mobile */
+    }
+    
+    .theme-toggle-btn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .btn-agendar {
+        padding: 0.75rem 2rem;
     }
 }
+
+/* Desktop grande */
+@media (min-width: 1024px) {
+    .menu-desktop {
+        gap: 2.5rem;
+    }
+}
+
+
+
 
 /* =====================================================
    SELECTOR DE IDIOMA
    ===================================================== */
-   .language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 0.5rem;
-    z-index: 1000;
-}
-
-body.dark .language-dropdown {
-    background: var(--gray-800);
-}
 .language-selector {
     position: relative;
 }
@@ -381,12 +459,13 @@ body.dark .language-dropdown {
     border: none;
     cursor: pointer;
     color: var(--gray-700);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
     transition: all 0.3s ease;
     border-radius: 0.5rem;
+    font-weight: 600;
 }
 
 body.dark .language-toggle-btn {
@@ -402,47 +481,30 @@ body.dark .language-toggle-btn:hover {
     background-color: var(--gray-800);
 }
 
-.language-toggle-btn span {
-    font-size: 1.25rem;
-}
-
-.language-toggle-btn .arrow-icon {
-    width: 1rem;
-    height: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.language-toggle-btn:hover .arrow-icon {
-    transform: translateY(2px);
-}
-
 .language-dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     right: 0;
-    margin-top: 0.5rem;
-    background-color: white;
+    background: white;
     border-radius: 0.75rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    min-width: 160px;
-    z-index: 100;
-    animation: fadeIn 0.2s ease;
+    padding: 0.5rem;
+    min-width: 140px;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s, visibility 0.2s;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.language-dropdown.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 body.dark .language-dropdown {
-    background-color: var(--gray-800);
+    background: var(--gray-800);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .language-option,
@@ -452,13 +514,12 @@ body.dark .language-dropdown {
     border: none;
     background: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: block;
     color: var(--gray-700);
-    transition: all 0.3s ease;
+    transition: all 0.2s;
     text-align: left;
     font-weight: 500;
+    border-radius: 0.5rem;
 }
 
 body.dark .language-option,
@@ -469,7 +530,6 @@ body.dark .language-option-mobile {
 .language-option:hover,
 .language-option-mobile:hover {
     background-color: var(--gray-100);
-    padding-left: 1.25rem;
 }
 
 body.dark .language-option:hover,
@@ -479,16 +539,9 @@ body.dark .language-option-mobile:hover {
 
 .language-option.active,
 .language-option-mobile.active {
-    background-color: var(--medens-blue-light);
-    color: white;
-    font-weight: 600;
-}
-
-body.dark .language-option.active,
-body.dark .language-option-mobile.active {
     background-color: var(--medens-blue);
+    color: white;
 }
-
 /* =====================================================
    BOTONES FLOTANTES MEJORADOS
    ===================================================== */

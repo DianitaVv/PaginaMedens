@@ -1,16 +1,13 @@
 /* =====================================================
    MEDENS - SISTEMA DE COMPONENTES COMPARTIDOS
-   Versión adaptada para estructura con carpeta pages/
    ===================================================== */
 
 const MedensComponents = {
-    // Detectar si estamos en la raíz o en pages/
     getBasePath() {
         const isInPages = window.location.pathname.includes('/pages/');
         return isInPages ? '../' : '';
     },
 
-    // ==================== NAVBAR HTML ====================
     getNavbarHTML() {
         const basePath = this.getBasePath();
         
@@ -27,18 +24,16 @@ const MedensComponents = {
                     
                     <!-- Menú Desktop -->
                     <div class="menu-desktop">
-                    
-
                         <a href="${basePath}index.html#inicio" data-translate="nav_inicio">Inicio</a>
                         <a href="${basePath}index.html#section-help" data-translate="nav_servicios">Ayuda</a>
                         <a href="${basePath}index.html#por-que-elegirnos" data-translate="nav_nosotros">¿Por qué elegirnos?</a>
                         <a href="${basePath}index.html#horarios" data-translate="nav_horarios">Horarios</a>
                         <a href="${basePath}index.html#contacto" data-translate="nav_contacto">Contacto</a>
                         
-                        <button class="btn-agendar" data-translate="btn_agendar" onclick="window.location.href='pages/agendar-cita.html'">Agendar Cita</button>
+                        <a href="${basePath}pages/agendar-cita.html" class="btn-agendar" data-translate="btn_agendar">Agendar Cita</a>
                         
                         <!-- Toggle de tema -->
-                        <button id="theme-toggle" class="theme-toggle-btn">
+                        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
                             <svg id="theme-toggle-dark-icon" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                             </svg>
@@ -47,25 +42,21 @@ const MedensComponents = {
                             </svg>
                         </button>
 
-                        <!-- Selector de Idioma -->
-<div class="language-selector">
-    <button id="language-toggle" class="language-toggle-btn">
-        MX
-    </button>
-
-    <div id="language-dropdown" class="language-dropdown hidden">
-        <button data-lang="es" class="language-option active">MX</button>
-        <button data-lang="en" class="language-option">US</button>
-    </div>
-</div>
-
-                        
-                    
+                        <!-- Selector de Idioma Desktop -->
+                        <div class="language-selector">
+                            <button id="language-toggle" class="language-toggle-btn" aria-label="Cambiar idioma">
+                                MX
+                            </button>
+                            <div id="language-dropdown" class="language-dropdown hidden">
+                                <button data-lang="es" class="language-option active">MX</button>
+                                <button data-lang="en" class="language-option">US</button>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Menú Mobile (botones) -->
                     <div class="menu-mobile-buttons">
-                        <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Cambiar tema">
                             <svg id="theme-toggle-dark-icon-mobile" class="hidden" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                             </svg>
@@ -76,23 +67,16 @@ const MedensComponents = {
 
                         <!-- Selector de Idioma Mobile -->
                         <div class="language-selector">
-                            <button id="language-toggle-mobile" class="language-toggle-btn">
-                                <span id="current-flag-mobile">🌐</span>
-                                <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
+                            <button id="language-toggle-mobile" class="language-toggle-btn" aria-label="Cambiar idioma">
+                                MX
                             </button>
                             <div id="language-dropdown-mobile" class="language-dropdown hidden">
-                                <button data-lang="es" class="language-option-mobile active">
-                                    <span>🇲🇽</span> Español
-                                </button>
-                                <button data-lang="en" class="language-option-mobile">
-                                    <span>🇺🇸</span> English
-                                </button>
+                                <button data-lang="es" class="language-option-mobile active">🇲🇽 MX</button>
+                                <button data-lang="en" class="language-option-mobile">🇺🇸 US</button>
                             </div>
                         </div>
 
-                        <button id="mobile-menu-button" class="mobile-menu-btn">
+                        <button id="mobile-menu-button" class="mobile-menu-btn" aria-label="Menú">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
@@ -109,45 +93,38 @@ const MedensComponents = {
                     <a href="${basePath}index.html#por-que-elegirnos" data-translate="nav_nosotros">¿Por qué elegirnos?</a>
                     <a href="${basePath}index.html#horarios" data-translate="nav_horarios">Horarios</a>
                     <a href="${basePath}index.html#contacto" data-translate="nav_contacto">Contacto</a>
-                    <button class="btn-agendar" data-translate="btn_agendar" onclick="window.location.href='pages/agendar-cita.html'">Agendar Cita</button>
-                  
+                    <a href="${basePath}pages/agendar-cita.html" class="btn-agendar" data-translate="btn_agendar">Agendar Cita</a>
                 </div>
             </div>
         </nav>
         `;
     },
 
-    
-
-    // ==================== INYECTAR COMPONENTES ====================
     injectNavbar() {
         const navPlaceholder = document.getElementById('navbar-placeholder');
         if (navPlaceholder) {
             navPlaceholder.innerHTML = this.getNavbarHTML();
         } else {
-            // Si no hay placeholder, insertar al inicio del body
             document.body.insertAdjacentHTML('afterbegin', this.getNavbarHTML());
         }
     },
 
-    
-
-    // ==================== INICIALIZACIÓN ====================
     init() {
-        this.injectNavbar();
-    
-        
-        // Disparar evento personalizado para que MedensApp sepa que el navbar está listo
+         this.injectNavbar();
+    console.log('🚀 Navbar inyectado');
+    // Esperar un tick para que los listeners se registren
+    setTimeout(() => {
         document.dispatchEvent(new Event('navbarLoaded'));
+        console.log('📢 Evento navbarLoaded disparado');
+    }, 0);
     }
 };
 
-// Ejecutar apenas cargue el DOM
+// Ejecutar
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => MedensComponents.init());
 } else {
     MedensComponents.init();
 }
 
-// Exportar para uso global
 window.MedensComponents = MedensComponents;

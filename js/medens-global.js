@@ -161,26 +161,36 @@ const MedensApp = {
     },
 
     // ==================== MENÚ MOBILE ====================
-    initMobileMenu() {
-        document.addEventListener('navbarLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+   // ==================== MENÚ MOBILE ====================
+initMobileMenu() {
+      console.log('📱 initMobileMenu ejecutado');
+    document.addEventListener('navbarLoaded', () => {
+        console.log('✅ Navbar cargado, buscando elementos...');
+        
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        console.log('🔍 Botón:', mobileMenuButton);
+        console.log('🔍 Menú:', mobileMenu);
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('🎯 Click en menú móvil');
+                mobileMenu.classList.toggle('hidden');
+            });
             
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
                 });
-                
-                // Cerrar al hacer click en un link
-                const menuLinks = mobileMenu.querySelectorAll('a');
-                menuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-        });
-    },
+            });
+        } else {
+            console.error('❌ Elementos no encontrados');
+        }
+    });
+},
 
     // ==================== SMOOTH SCROLL ====================
     initSmoothScroll() {
@@ -199,18 +209,15 @@ const MedensApp = {
 
     // ==================== INICIALIZACIÓN ====================
     init() {
-        this.initTheme();
-        this.initLanguage();
-        this.initMobileMenu();
-        this.initSmoothScroll();
-    }
+         console.log('🎬 Iniciando MedensApp...');
+    this.initTheme();
+    this.initLanguage();
+    this.initMobileMenu();  // ← ¿ESTÁ ESTA LÍNEA?
+    this.initSmoothScroll();
+    console.log('✅ MedensApp inicializado');
+}
 };
 
-// Inicializar cuando cargue el DOM
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => MedensApp.init());
-} else {
-    MedensApp.init();
-}
-
+// Inicializar ANTES de que cargue el DOM
+MedensApp.init();
 window.MedensApp = MedensApp;
