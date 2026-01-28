@@ -963,7 +963,7 @@ body.dark .hero-overlay {
 }
 
 .hero-title {
-    font-size: clamp(1.9rem, 6.5vw, 7rem);  
+    font-size: clamp(3rem, 6.5vw, 7rem);  /* Cambiado de 1.9rem a 3rem */
     font-weight: 580;
     color: white;
     margin-bottom: 2rem;
