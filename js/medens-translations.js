@@ -196,7 +196,7 @@ const MedensTranslations = {
     
     // Hero Section
     hero_title: {
-        es: 'Una vida plena es posible ',
+        es: 'Una vida plena<br> es posible',
         en: 'Living fully matters'
     },
     
@@ -244,8 +244,8 @@ const MedensTranslations = {
         en: 'Book Appointment'
     },
     help_costos: {
-        es: 'Costos y Seguros',
-        en: 'Costs & Insurance'
+        es: 'Vida con Hemodíalisis',
+        en: 'Living with Hemodialysis'
     },
     
     // Cards Cuidador
@@ -2327,8 +2327,489 @@ nutrition_cta_text: {
 nutrition_cta_button: {
     es: 'Agendar Consulta',
     en: 'Schedule Consultation'
-}
+},
+
+// ============================================================
+// TRADUCCIONES PARA: VIDA CON HEMODIÁLISIS
+// Agregar estas traducciones a tu archivo medens-translations.js
+// ============================================================
+
+// BREADCRUMB
+vida_breadcrumb_home: {
+    es: 'Inicio',
+    en: 'Home'
+},
+vida_breadcrumb_current: {
+    es: 'Vida con Hemodiálisis',
+    en: 'Life with Hemodialysis'
+},
+
+// HERO
+vida_hero_title: {
+    es: 'Tu Vida con Hemodiálisis',
+    en: 'Your Life with Hemodialysis'
+},
+vida_hero_subtitle: {
+    es: 'Consejos prácticos para vivir plenamente durante tu tratamiento',
+    en: 'Practical tips for living fully during your treatment'
+},
+
+// INTRODUCCIÓN
+vida_intro_tag: {
+    es: 'Tu nueva rutina',
+    en: 'Your new routine'
+},
+vida_intro_title: {
+    es: 'La Hemodiálisis No Detiene Tu Vida',
+    en: 'Hemodialysis Doesn\'t Stop Your Life'
+},
+vida_intro_lead: {
+    es: 'Miles de personas alrededor del mundo llevan vidas plenas, activas y felices mientras reciben tratamiento de hemodiálisis. Con la planificación adecuada y algunos ajustes, puedes continuar disfrutando de las cosas que amas.',
+    en: 'Thousands of people around the world lead full, active, and happy lives while receiving hemodialysis treatment. With proper planning and some adjustments, you can continue enjoying the things you love.'
+},
+vida_intro_desc: {
+    es: 'Esta guía te ayudará a entender cómo organizar tu rutina, mantener tu vida laboral y social, y aprovechar al máximo cada día. Recuerda: la hemodiálisis es parte de tu vida, pero no define quién eres.',
+    en: 'This guide will help you understand how to organize your routine, maintain your work and social life, and make the most of each day. Remember: hemodialysis is part of your life, but it doesn\'t define who you are.'
+},
+
+// ORGANIZANDO TU SEMANA
+vida_week_tag: {
+    es: 'Planificación',
+    en: 'Planning'
+},
+vida_week_title: {
+    es: 'Organizando Tu Semana',
+    en: 'Organizing Your Week'
+},
+vida_week_subtitle: {
+    es: 'Cómo distribuir tu tiempo entre tratamiento y vida personal',
+    en: 'How to distribute your time between treatment and personal life'
+},
+vida_week_dialysis_title: {
+    es: 'Días de Diálisis',
+    en: 'Dialysis Days'
+},
+vida_week_dialysis_1: {
+    es: 'Lunes, miércoles y viernes (o martes, jueves y sábado)',
+    en: 'Monday, Wednesday and Friday (or Tuesday, Thursday and Saturday)'
+},
+vida_week_dialysis_2: {
+    es: 'Planifica 5-6 horas totales (incluyendo traslados)',
+    en: 'Plan 5-6 total hours (including transportation)'
+},
+vida_week_dialysis_3: {
+    es: 'Descansa después de cada sesión',
+    en: 'Rest after each session'
+},
+vida_week_dialysis_4: {
+    es: 'Mantén tu horario consistente',
+    en: 'Keep your schedule consistent'
+},
+vida_week_free_badge: {
+    es: 'Aprovéchalos',
+    en: 'Make the most'
+},
+vida_week_free_title: {
+    es: 'Días Libres',
+    en: 'Free Days'
+},
+vida_week_free_1: {
+    es: 'Trabaja o estudia con normalidad',
+    en: 'Work or study normally'
+},
+vida_week_free_2: {
+    es: 'Programa actividades sociales',
+    en: 'Schedule social activities'
+},
+vida_week_free_3: {
+    es: 'Haz ejercicio moderado',
+    en: 'Do moderate exercise'
+},
+vida_week_free_4: {
+    es: 'Disfruta tiempo con familia',
+    en: 'Enjoy time with family'
+},
+vida_week_free_5: {
+    es: 'Sal de paseo o viajes cortos',
+    en: 'Go out or take short trips'
+},
+vida_week_balance_title: {
+    es: 'Balance Perfecto',
+    en: 'Perfect Balance'
+},
+vida_week_balance_1: {
+    es: 'Duerme 7-8 horas diarias',
+    en: 'Sleep 7-8 hours daily'
+},
+vida_week_balance_2: {
+    es: 'Mantén horarios regulares de comida',
+    en: 'Maintain regular meal times'
+},
+vida_week_balance_3: {
+    es: 'Hidrátate según indicaciones',
+    en: 'Hydrate according to instructions'
+},
+vida_week_balance_4: {
+    es: 'Toma descansos cuando los necesites',
+    en: 'Take breaks when you need them'
+},
+vida_week_note: {
+    es: 'Consejo: Usa un calendario o app para recordar tus citas y medicamentos. La consistencia es clave para sentirte mejor.',
+    en: 'Tip: Use a calendar or app to remember your appointments and medications. Consistency is key to feeling better.'
+},
+
+// DURANTE LAS SESIONES 
+vida_session_tag: {
+    es: 'En la clínica',
+    en: 'At the clinic'
+},
+vida_session_title: {
+    es: 'Durante las Sesiones',
+    en: 'During Sessions'
+},
+vida_session_subtitle: {
+    es: 'Aprovecha tu tiempo en la clínica de forma productiva y relajante',
+    en: 'Make the most of your time at the clinic productively and relaxingly'
+},
+vida_session_read_title: {
+    es: 'Lee y Aprende',
+    en: 'Read and Learn'
+},
+vida_session_read_desc: {
+    es: 'El momento perfecto para ponerte al día',
+    en: 'The perfect time to catch up'
+},
+vida_session_read_1: {
+    es: 'Libros físicos o digitales',
+    en: 'Physical or digital books'
+},
+vida_session_read_2: {
+    es: 'Revistas y periódicos',
+    en: 'Magazines and newspapers'
+},
+vida_session_read_3: {
+    es: 'Audiolibros y podcasts',
+    en: 'Audiobooks and podcasts'
+},
+vida_session_entertainment_title: {
+    es: 'Entretenimiento',
+    en: 'Entertainment'
+},
+vida_session_entertainment_desc: {
+    es: 'Disfruta tu contenido favorito',
+    en: 'Enjoy your favorite content'
+},
+vida_session_entertainment_1: {
+    es: 'Series y películas en tablet',
+    en: 'Series and movies on tablet'
+},
+vida_session_entertainment_2: {
+    es: 'Música relajante',
+    en: 'Relaxing music'
+},
+vida_session_entertainment_3: {
+    es: 'Juegos en celular o tablet',
+    en: 'Games on phone or tablet'
+},
+vida_session_work_title: {
+    es: 'Trabaja o Estudia',
+    en: 'Work or Study'
+},
+vida_session_work_desc: {
+    es: 'Mantente productivo si te sientes bien',
+    en: 'Stay productive if you feel well'
+},
+vida_session_work_1: {
+    es: 'Laptop con Wi-Fi disponible',
+    en: 'Laptop with Wi-Fi available'
+},
+vida_session_work_2: {
+    es: 'Videollamadas de trabajo',
+    en: 'Work video calls'
+},
+vida_session_work_3: {
+    es: 'Correos y tareas pendientes',
+    en: 'Emails and pending tasks'
+},
+vida_session_social_title: {
+    es: 'Socializa',
+    en: 'Socialize'
+},
+vida_session_social_desc: {
+    es: 'Comparte con otros pacientes',
+    en: 'Connect with other patients'
+},
+vida_session_social_1: {
+    es: 'Conversa con otros pacientes',
+    en: 'Chat with other patients'
+},
+vida_session_social_2: {
+    es: 'Comparte experiencias y consejos',
+    en: 'Share experiences and tips'
+},
+vida_session_social_3: {
+    es: 'Crea una red de apoyo',
+    en: 'Create a support network'
+},
+
+// TRABAJO Y ACTIVIDADES
+vida_activities_tag: {
+    es: 'Vida activa',
+    en: 'Active life'
+},
+vida_activities_title: {
+    es: 'Trabajo y Actividades',
+    en: 'Work and Activities'
+},
+vida_activities_subtitle: {
+    es: 'Mantén tu vida profesional y personal activa',
+    en: 'Keep your professional and personal life active'
+},
+vida_activities_work_title: {
+    es: 'Trabajo',
+    en: 'Work'
+},
+vida_activities_work_desc: {
+    es: 'Muchos pacientes trabajan tiempo completo. Comunica tus necesidades de horario con tu empleador y mantén un equilibrio saludable.',
+    en: 'Many patients work full-time. Communicate your schedule needs with your employer and maintain a healthy balance.'
+},
+vida_activities_exercise_title: {
+    es: 'Ejercicio',
+    en: 'Exercise'
+},
+vida_activities_exercise_desc: {
+    es: 'Caminar, nadar, yoga suave. Consulta con tu médico qué ejercicios son mejores para ti. El ejercicio regular mejora tu bienestar.',
+    en: 'Walking, swimming, gentle yoga. Consult with your doctor about which exercises are best for you. Regular exercise improves your wellbeing.'
+},
+vida_activities_hobbies_title: {
+    es: 'Pasatiempos',
+    en: 'Hobbies'
+},
+vida_activities_hobbies_desc: {
+    es: 'Continúa con tus hobbies favoritos: pintura, música, jardinería, manualidades. Mantén tu mente activa y creativa.',
+    en: 'Continue with your favorite hobbies: painting, music, gardening, crafts. Keep your mind active and creative.'
+},
+vida_activities_volunteer_title: {
+    es: 'Voluntariado',
+    en: 'Volunteering'
+},
+vida_activities_volunteer_desc: {
+    es: 'Ayudar a otros puede ser muy gratificante. Considera actividades de voluntariado que se ajusten a tu energía y horario.',
+    en: 'Helping others can be very rewarding. Consider volunteer activities that fit your energy and schedule.'
+},
+vida_activities_education_title: {
+    es: 'Educación',
+    en: 'Education'
+},
+vida_activities_education_desc: {
+    es: 'Nunca es tarde para aprender. Toma cursos en línea, aprende un idioma o desarrolla una nueva habilidad desde casa.',
+    en: 'It\'s never too late to learn. Take online courses, learn a language, or develop a new skill from home.'
+},
+vida_activities_groups_title: {
+    es: 'Grupos de Apoyo',
+    en: 'Support Groups'
+},
+vida_activities_groups_desc: {
+    es: 'Únete a grupos de apoyo presenciales o en línea. Compartir experiencias con otros pacientes es muy valioso.',
+    en: 'Join in-person or online support groups. Sharing experiences with other patients is very valuable.'
+},
+vida_activities_note: {
+    es: 'Recuerda: Escucha a tu cuerpo. Está bien tener días con menos energía. Ajusta tus actividades según cómo te sientas.',
+    en: 'Remember:Listen to your body. It\'s okay to have days with less energy. Adjust your activities based on how you feel.'
+},
+
+// VIAJES Y VIDA SOCIAL
+vida_travel_tag: {
+    es: 'Sin límites',
+    en: 'No limits'
+},
+vida_travel_title: {
+    es: 'Viajes y Vida Social',
+    en: 'Travel and Social Life'
+},
+vida_travel_subtitle: {
+    es: 'No dejes de disfrutar de las experiencias que amas',
+    en: 'Don\'t stop enjoying the experiences you love'
+},
+vida_travel_vacation_badge: {
+    es: 'Sí puedes',
+    en: 'Yes you can'
+},
+vida_travel_vacation_title: {
+    es: 'Vacaciones',
+    en: 'Vacations'
+},
+vida_travel_vacation_desc: {
+    es: 'Puedes viajar con planificación anticipada. Coordinamos tu tratamiento con clínicas en tu destino. Avísanos con 2-3 semanas de anticipación.',
+    en: 'You can travel with advance planning. We coordinate your treatment with clinics at your destination. Let us know 2-3 weeks in advance.'
+},
+vida_travel_family_badge: {
+    es: 'Importante',
+    en: 'Important'
+},
+vida_travel_family_title: {
+    es: 'Vida Familiar',
+    en: 'Family Life'
+},
+vida_travel_family_desc: {
+    es: 'Participa en reuniones familiares, celebraciones y eventos especiales. Planifica alrededor de tus sesiones y comunica tus necesidades a tu familia.',
+    en: 'Participate in family gatherings, celebrations, and special events. Plan around your sessions and communicate your needs to your family.'
+},
+vida_travel_friends_badge: {
+    es: 'Disfruta',
+    en: 'Enjoy'
+},
+vida_travel_friends_title: {
+    es: 'Amigos y Eventos',
+    en: 'Friends and Events'
+},
+vida_travel_friends_desc: {
+    es: 'Sal con amigos, ve al cine, a restaurantes, conciertos. Solo cuida tu dieta y horarios de medicamentos. No te aísles socialmente.',
+    en: 'Go out with friends, to the movies, restaurants, concerts. Just watch your diet and medication schedules. Don\'t isolate yourself socially.'
+},
+vida_travel_tips_badge: {
+    es: 'Consejos',
+    en: 'Tips'
+},
+vida_travel_tips_title: {
+    es: 'Tips de Viaje',
+    en: 'Travel Tips'
+},
+vida_travel_tips_desc: {
+    es: 'Lleva copias de tu historial médico, lista de medicamentos, información de contacto de tu nefrólogo y suficientes medicamentos extras.',
+    en: 'Bring copies of your medical history, medication list, your nephrologist\'s contact information, and enough extra medications.'
+},
+
+// CONSEJOS PRÁCTICOS
+vida_tips_tag: {
+    es: 'Bienestar diario',
+    en: 'Daily wellness'
+},
+vida_tips_title: {
+    es: 'Consejos Prácticos',
+    en: 'Practical Tips'
+},
+vida_tips_subtitle: {
+    es: 'Pequeños cambios que marcan la diferencia',
+    en: 'Small changes that make a difference'
+},
+vida_tips_energy_title: {
+    es: 'Manejo de Energía',
+    en: 'Energy Management'
+},
+vida_tips_energy_desc: {
+    es: 'Estrategias para mantener tu vitalidad',
+    en: 'Strategies to maintain your vitality'
+},
+vida_tips_energy_1: {
+    es: 'Descansa 30 min después de diálisis',
+    en: 'Rest 30 min after dialysis'
+},
+vida_tips_energy_2: {
+    es: 'Toma siestas cortas si las necesitas',
+    en: 'Take short naps if you need them'
+},
+vida_tips_energy_3: {
+    es: 'No te exijas demasiado en días de tratamiento',
+    en: 'Don\'t push yourself too hard on treatment days'
+},
+vida_tips_energy_4: {
+    es: 'Planifica actividades importantes en días libres',
+    en: 'Plan important activities on free days'
+},
+vida_tips_sleep_title: {
+    es: 'Sueño de Calidad',
+    en: 'Quality Sleep'
+},
+vida_tips_sleep_desc: {
+    es: 'Mejora tu descanso nocturno',
+    en: 'Improve your nighttime rest'
+},
+vida_tips_sleep_1: {
+    es: 'Mantén horario regular de sueño',
+    en: 'Maintain regular sleep schedule'
+},
+vida_tips_sleep_2: {
+    es: 'Evita cafeína por la tarde',
+    en: 'Avoid caffeine in the afternoon'
+},
+vida_tips_sleep_3: {
+    es: 'Crea ambiente tranquilo y oscuro',
+    en: 'Create a calm and dark environment'
+},
+vida_tips_sleep_4: {
+    es: 'Evita pantallas 1 hora antes de dormir',
+    en: 'Avoid screens 1 hour before sleep'
+},
+vida_tips_emotional_title: {
+    es: 'Salud Emocional',
+    en: 'Emotional Health'
+},
+vida_tips_emotional_desc: {
+    es: 'Cuida tu bienestar mental',
+    en: 'Take care of your mental wellbeing'
+},
+vida_tips_emotional_1: {
+    es: 'Habla sobre tus sentimientos',
+    en: 'Talk about your feelings'
+},
+vida_tips_emotional_2: {
+    es: 'Busca apoyo psicológico si lo necesitas',
+    en: 'Seek psychological support if needed'
+},
+vida_tips_emotional_3: {
+    es: 'Practica técnicas de relajación',
+    en: 'Practice relaxation techniques'
+},
+vida_tips_emotional_4: {
+    es: 'Celebra pequeños logros diarios',
+    en: 'Celebrate small daily achievements'
+},
+vida_tips_adherence_title: {
+    es: 'Adherencia al Tratamiento',
+    en: 'Treatment Adherence'
+},
+vida_tips_adherence_desc: {
+    es: 'La clave del éxito',
+    en: 'The key to success'
+},
+vida_tips_adherence_1: {
+    es: 'Nunca faltes a tus sesiones',
+    en: 'Never miss your sessions'
+},
+vida_tips_adherence_2: {
+    es: 'Toma medicamentos según prescripción',
+    en: 'Take medications as prescribed'
+},
+vida_tips_adherence_3: {
+    es: 'Sigue las indicaciones de dieta',
+    en: 'Follow dietary guidelines'
+},
+vida_tips_adherence_4: {
+    es: 'Comunica cambios a tu médico',
+    en: 'Communicate changes to your doctor'
+},
+
+// CTA FINAL
+vida_cta_title: {
+    es: '¿Necesitas Más Orientación?',
+    en: 'Need More Guidance?'
+},
+vida_cta_desc: {
+    es: 'Nuestro equipo está aquí para apoyarte en cada paso. Agenda una consulta para hablar sobre tu estilo de vida.',
+    en: 'Our team is here to support you every step of the way. Schedule a consultation to talk about your lifestyle.'
+},
+vida_cta_btn: {
+    es: 'Agendar Consulta',
+    en: 'Schedule Consultation'
+},
+
+// ============================================================
+// FIN DE TRADUCCIONES - VIDA CON HEMODIÁLISIS
+// ============================================================
 };
+
+
 
 // Hacer disponible globalmente
 window.MedensTranslations = MedensTranslations;

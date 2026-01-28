@@ -102,7 +102,7 @@ nav {
     top: 0;
     z-index: 50;
     transition: all 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Más ancho solo en desktop grande */
@@ -745,7 +745,6 @@ body.dark .mobile-menu-content a:hover {
    SELECTOR DE IDIOMA
    ===================================================== */
 .language-selector {
-     overflow: visible !important;
     position: relative;
 }
 
@@ -777,9 +776,7 @@ body.dark .language-toggle-btn:hover {
 }
 
 .language-dropdown {
-    position: relative;
-     padding-bottom: 200px; 
-     display: inline-block;
+    position: absolute;  /* ← CAMBIO AQUÍ */
     top: calc(100% + 0.5rem);
     right: 0;
     background: white;
@@ -787,7 +784,7 @@ body.dark .language-toggle-btn:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     padding: 0.5rem;
     min-width: 140px;
-    z-index: 1000;
+    z-index: 9999;  /* ← AUMENTAR Z-INDEX */
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s, visibility 0.2s;
@@ -977,6 +974,19 @@ body.dark .hero-overlay {
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
     letter-spacing: -0.02em;
     
+}
+.hero-title br {
+    display: block;
+    content: "";
+    margin-bottom: 0.5rem; /* Ajusta el espacio vertical */
+    /* O usar padding-top en el elemento siguiente */
+}
+
+.hero-title br::after {
+    content: "\A"; /* Salto de línea */
+    white-space: pre; /* Mantiene el salto */
+    display: block;
+    height: 0.8rem; /* Control preciso del espacio */
 }
 
 

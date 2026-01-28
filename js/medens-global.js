@@ -148,7 +148,7 @@ const MedensApp = {
         });
     },
 
-    translatePage() {
+   translatePage() {
     if (!this.translations) return;
     
     // Traducir elementos con data-translate
@@ -156,7 +156,7 @@ const MedensApp = {
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
         if (this.translations[key] && this.translations[key][this.currentLang]) {
-            element.textContent = this.translations[key][this.currentLang];
+            element.innerHTML = this.translations[key][this.currentLang]; // ✅ Cambiar a innerHTML
         }
     });
     
